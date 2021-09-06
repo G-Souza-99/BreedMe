@@ -4,11 +4,13 @@
 <%= link_to "📝 Edit", edit_pet_path(@pet) %>
 <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
 
-<p><% @pet.pet_type == 'dog' ? 🐶 : 🐱 %> </p>
+<p><%= @pet.pet_type == 'dog' ? '🐶' : '🐱' %> </p>
 <p>Name: <%= @pet.name %></p>
+<p>Breed: <%= @pet.breed %></p>
 <p>Sex: <%= @pet.sex %></p>
 <p>Birthday: <%= @pet.birthday %></p>
 <p>Pedigree Number: <%= @pet.pedigree_number %></p>
 <p>Description: <%= @pet.description %></p>
+
 
 <%# somehow add on_heat no show %>
