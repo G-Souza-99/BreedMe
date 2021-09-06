@@ -1,9 +1,9 @@
 <h1>All Pets</h1>
 
-<% @pets.each do |pet| %>
+<% @pets.reverse.each do |pet| %>
   <%= link_to pet_path(pet) do %>
-  <h2><%= @pet.name %></h2>
-  <p><%= @pet.breed %></p>
-  <p><%= @pet.sex %></p>
+  <h2><%= pet.name %></h2>
+  <p><%= pet.breed %></p>
+  <p><%= pet.sex %></p>
   <% end %>
 <% end %>
