@@ -1,6 +1,8 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
+require 'byebug'
+
 puts '***** Destroying Seeds *****'
 User.destroy_all
 Pet.destroy_all
@@ -12,7 +14,7 @@ user = User.create(email: 'test@test.com', password: '123456', first_name: 'Firs
 puts '***** Creating 30 pets *****'
 
 30.times do
-  pet = Pet.new(
+  pet = Pet.create!(
     user_id: user.id,
     pet_type: ["cat", "dog"].sample,
     name: ["Mel", "Gucci", "Sebastião", "Pucci", "Fendi", "Celine", "Dior", "Pearl", "Gina", "Lua", "Batman", "Wintour", "Marc", "Kim", "Nívea", "Xena", "Kiki", "Eva", "Agnes", "Hera", "Patty", "Penny", "Bonnie", "Alice", "Dalila", "Jean-Paul", "Westwood", "Pucci", "Wang", "Ballmer"].sample,
@@ -23,7 +25,10 @@ puts '***** Creating 30 pets *****'
     birthday: Faker::Date.birthday,
     breed: Faker::Creature::Dog.breed
   )
-  pet.save
+  pet.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/dog_#{rand(1..9)}.jpg")),
+    filename: 'pet.jpg'
+  )
 end
 
-puts '****** F* Finished ******'
+puts '****** Finished ******'
