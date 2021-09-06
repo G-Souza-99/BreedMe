@@ -4,6 +4,7 @@
 <%= link_to "📝 Edit", edit_pet_path(@pet) %>
 <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
 
+<%= cl_image_tag @pet.photo.key %>
 <p><%= @pet.pet_type == 'dog' ? '🐶' : '🐱' %> </p>
 <p>Name: <%= @pet.name %></p>
 <p>Breed: <%= @pet.breed %></p>
