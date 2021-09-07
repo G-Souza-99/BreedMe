@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
+  <%= link_to pets_path, class: "navbar-brand" do %>
     <%= image_tag "breedme_logo.png" %>
     <% end %>
 
@@ -15,7 +15,7 @@
           <div class="navbar-nav p-2">
             <a href="#", class= "dropdown-item"> Favourites </a>
             <a href="#", class= "dropdown-item"> Messages </a>
-            <a href="#", class= "dropdown-item"> My Pets </a>
+            <%= link_to "My Pets", my_pets_pets_path , class: "dropdown-item" %>
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle" %>
           </div>
