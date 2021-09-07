@@ -21,12 +21,14 @@
 
   button{
     background: var(--yellow);
-    border-radius: 15px;
     color:#fff;
-    height: 50px;
-    width: 290px;
-    border-radius: 15px;
+    height: 62px;
+    width: 284px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
     box-shadow: 0px 4px 4px var(--grey);
+    letter-spacing: 1.1px
   }
   a{
     font-weight: bold;
