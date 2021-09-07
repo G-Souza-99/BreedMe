@@ -1,5 +1,7 @@
 <% breeds = ['rafeiro', 'não rafeiro', 'adicionar restantes raças'] %>
 
+<%# Atualizar com todas as raças de cães e gatos e fazer a collection ser condicionada de acordo com pet_type %>
+
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :pet_type, as: :radio_buttons, collection: [['0', 'dog'], ['1', 'cat']], label_method: :second, value_method: :first %>
