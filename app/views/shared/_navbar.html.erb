@@ -13,10 +13,13 @@
       <% if user_signed_in? %>
         <div class="navbar-light">
           <div class="navbar-nav p-2">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%# Tirar isto daqui %>
             <a href="#"> Favourites </a>
             <a href="#"> Messages </a>
             <a href="#"> My Pets </a>
-            <a href="#"> My Profile </a>
+            <a href=""> My Profile </a>
+
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle" %>
           </div>
         </div>
