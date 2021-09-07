@@ -8,5 +8,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+a.dropdown-item:hover,
+a.dropdown-item:active {
+  background-color: rgb(255,212,0) !important;
+  color: white;
 }

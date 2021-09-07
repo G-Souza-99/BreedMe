@@ -1,10 +1,17 @@
+<% breeds = ['rafeiro', 'não rafeiro', 'adicionar restantes raças'] %>
+
 <%= simple_form_for(@pet) do |f| %>
-  <%= f.input :pet_type %>
   <%= f.input :name %>
-  <%= f.input :sex %>
+  <%= f.input :pet_type, as: :radio_buttons, collection: [['0', 'dog'], ['1', 'cat']], label_method: :second, value_method: :first %>
+  <%= f.input :sex, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+  <%= f.input :breed, as: :select, collection: breeds %>
+  <%= f.input :pedigree_number %>
+  <%= f.label :birthday, 'Birthday' %>
+  <%= f.date_field :birthday, value: Time.now.strftime('%Y-%m-%d'), max: Date.today %>
   <%= f.input :description %>
   <%= f.input :on_heat %>
-  <%= f.input :birthday %>
-  <%= f.input :pedigree_number %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+
+<%# quero tirar o on_heat daqui e colocar nos meus animais apenas cadelas %>
