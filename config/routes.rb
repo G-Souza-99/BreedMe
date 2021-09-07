@@ -7,5 +7,3 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 end
-
-# create e show têm que ser nested nos pets
