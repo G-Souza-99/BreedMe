@@ -2,20 +2,25 @@
   <div class="container">
   <%# Header %>
   <div class="header pt-3 mb-5">
-    <h3 style="strong">BREED ME!</h3>
+    <%= image_tag "breedme_logo.png" %>
     <div class="header-options">
       <h4 class="mr-4 pt-3">Have an account?</h4>
       <button>Sign in</button>
     </div>
   </div>
   <%# Hero Banner %>
-    <div class="banner">
-      <h1 class="mb-5">FIND BREEDING PARTENERS FOR YOUR PETS!</h1>
-      <p class="mb-2">BreedMe is the only pet matching app that helps you find what you need.
-          You deserve to know your other breeders.
-          Meet them today!</p>
-      <p class="mt-4">By clicking Join, you agree to our <a class="underline" href="#">Terms</a>. Learn how we process your data in our <a class="underline" href="#">Privacy Policy</a>and <a class="underline" href="#">Cookies Policy</a>.</p>
-      <button class="mt-4">JOIN BREEDME!</button>
+    <div class="row banner">
+      <div class="col-md-10">
+        <h1 class="mb-5">FIND BREEDING PARTENERS FOR YOUR PETS!</h1>
+        <p class="mb-2">BreedMe is the only pet matching app that helps you find what you need.
+            You deserve to know your other breeders.
+            Meet them today!</p>
+        <p class="mt-4">By clicking Join, you agree to our <a class="underline" href="#">Terms</a>. Learn how we process your data in our <a class="underline" href="#">Privacy Policy</a> and <a class="underline" href="#">Cookies Policy</a>.</p>
+        <button class="mt-4">JOIN BREEDME!</button>
+      </div>
+      <div class="col-md-2">
+      <%= image_tag "pet3.png" %>
+      </div>
     </div>
   </div>
   <%# Footer %>

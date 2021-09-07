@@ -1,22 +1,22 @@
 .banner{
   width:660px;
   h1{
-    font-family: Impact;
-    font-size: 3.3em;
-    color: #fff;
-    text-shadow: -6px 3px 0px black;
-    -webkit-text-stroke: 3px black;
+    font-size: 3.4em;
+    font-weight: bold;
+    color:var(--black);
     letter-spacing:0.08em;
+
   }
   p{
-    width: 400px;
+    width: 470px;
   }
   p:first-of-type{
     font-size: 1.5em;
+    color:var(--black)
   }
   p:last-of-type{
     font-size: 1em;
-    color:var(--grey)
+    color:var(--black)
   }
 
   button{
@@ -27,15 +27,15 @@
     font-size: 1rem;
     font-weight: bold;
     border-radius: 6px;
-    box-shadow: 0px 4px 4px var(--grey);
+    box-shadow: 0px 4px 4px var(--black);
     letter-spacing: 1.1px
   }
   a{
     font-weight: bold;
     text-decoration:underline;
-    color:var(--grey);
+    color:var(--black);
     &:hover{
-      color:var(--black);
+      color:var(--white);
     }
   }
 }
