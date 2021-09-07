@@ -1,0 +1,39 @@
+.banner{
+  width:660px;
+  h1{
+    font-family: Impact;
+    font-size: 3.3em;
+    color: #fff;
+    text-shadow: -6px 3px 0px black;
+    -webkit-text-stroke: 3px black;
+    letter-spacing:0.08em;
+  }
+  p{
+    width: 400px;
+  }
+  p:first-of-type{
+    font-size: 1.5em;
+  }
+  p:last-of-type{
+    font-size: 1em;
+    color:var(--grey)
+  }
+
+  button{
+    background: var(--yellow);
+    border-radius: 15px;
+    color:#fff;
+    height: 50px;
+    width: 290px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px var(--grey);
+  }
+  a{
+    font-weight: bold;
+    text-decoration:underline;
+    color:var(--grey);
+    &:hover{
+      color:var(--black);
+    }
+  }
+}
