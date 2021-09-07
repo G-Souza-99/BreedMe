@@ -3,7 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.3'
 
-# cloudinary
+# pundit for authorization
+gem 'pundit'
+
+# cloudinary for image upload by user
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
