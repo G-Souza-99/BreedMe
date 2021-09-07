@@ -1,0 +1,34 @@
+.header{
+  display:flex;
+  justify-content:space-between;
+  font-family: Arial,sans-serif;
+  margin-top:10px;
+  // background-color;
+  .header-options{
+    text-align: center;
+    display:flex;
+    button{
+      background-color: transparent;
+      border: 2px solid var(--black);
+      filter: drop-shadow(0px 4px 4px rgba(var(--rgb-black), 0.25));
+      width: 95px;
+      height: 50px;
+    }
+  }
+  h3{
+    font-size:1.5em;
+    font-family: Impact, sans-serif;
+  }
+  h4{
+    font-size: 1em;
+    color: var(--grey);
+  }
+}
+
+@media(max-width:450px){
+  .header-options{
+    h4{
+      display:none;
+    }
+  }
+}
