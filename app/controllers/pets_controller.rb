@@ -4,6 +4,7 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all
     @pets = policy_scope(Pet).order(created_at: :desc)
+    session[:last_page] = 'pets_index'
   end
 
   def show
@@ -19,7 +20,7 @@ class PetsController < ApplicationController
     @pet.user = current_user
     authorize @pet
     if @pet.save
-      redirect_to pet_path(@pet)
+      redirect_to my_pets_pets_path
     else
       render :new
     end
@@ -39,6 +40,12 @@ class PetsController < ApplicationController
   def destroy
     @pet.destroy
     redirect_to pets_path
+  end
+
+  def my_pets
+    @pets = Pet.where(user: current_user)
+    authorize Pet
+    session[:last_page] = 'my_pets'
   end
 
   private

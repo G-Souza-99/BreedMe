@@ -1,14 +1,17 @@
 <h1>Pet information</h1>
 
-<%= link_to "⬅️ Back", pets_path %>
+<%= link_to "⬅️ Back", :back %>
 
-<% if policy(@pet).edit? %>
-  <%= link_to "📝 Edit", edit_pet_path(@pet) %>
+<% if session[:last_page] == 'my_pets' %>
+  <% if policy(@pet).edit? %>
+    <%= link_to "📝 Edit", edit_pet_path(@pet) %>
+  <% end %>
+
+  <% if policy(@pet).destroy? %>
+    <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
+  <% end %>
 <% end %>
 
-<% if policy(@pet).destroy? %>
-  <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
-<% end %>
 
 <p><%= cl_image_tag @pet.photo.key, width: 200, height: 150, crop: :fill %></p>
 <p><%= @pet.pet_type == 'dog' ? '🐶' : '🐱' %> </p>
