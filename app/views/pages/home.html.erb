@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="change-me">
+  <div class="container">
+  <%# Header %>
+  <div class="header pt-3 mb-5">
+    <%= image_tag "breedme_logo.png" %>
+    <div class="header-options">
+      <h4 class="mr-4 pt-3">Have an account?</h4>
+      <% if user_signed_in? %>
+        <button><%= link_to "Sign in", pets_path %></button>
+      <% else %>
+        <button><%= link_to "Sign in", new_user_session_path, class: "nav-link" %></button>
+      <% end %>
+
+    </div>
+  </div>
+  <%# Hero Banner %>
+    <div class="row banner">
+      <div class="col-md-10">
+        <h1 class="mb-4">FIND BREEDING PARTENERS FOR YOUR PETS!</h1>
+        <p class="mb-2">BreedMe is the only pet matching app that helps you find what you need.
+            You deserve to know your other breeders.
+            Meet them today!</p>
+        <p class="mt-4">By clicking Join, you agree to our <a class="underline" href="#">Terms</a>. Learn how we process your data in our <a class="underline" href="#">Privacy Policy</a> and <a class="underline" href="#">Cookies Policy</a>.</p>
+        <button class="mt-4">JOIN BREEDME!</button>
+      </div>
+      <div class="col-md-2">
+      <%= image_tag "pet3.png" %>
+      </div>
+    </div>
+  </div>
+  <%# Footer %>
+</div>

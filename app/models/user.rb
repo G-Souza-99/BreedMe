@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pets, dependent: :destroy
+  has_many :messages
+  has_many :chatrooms
 end
