@@ -2,6 +2,7 @@
 
 <% @pets.reverse.each do |pet| %>
   <%= link_to pet_path(pet) do %>
+  <%= cl_image_tag pet.photo.key, width: 200, height: 150, crop: :fill %>
   <h2><%= pet.name %></h2>
   <p><%= pet.breed %></p>
   <p><%= pet.sex %></p>

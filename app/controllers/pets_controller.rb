@@ -3,6 +3,7 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    @pets = policy_scope(Pet).order(created_at: :desc)
   end
 
   def show
@@ -10,11 +11,13 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    authorize @pet
   end
 
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    authorize @pet
     if @pet.save
       redirect_to pet_path(@pet)
     else
@@ -42,9 +45,10 @@ class PetsController < ApplicationController
 
   def set_pet
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def pet_params
-    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat)
+    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat, :photo)
   end
 end
