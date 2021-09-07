@@ -1,10 +1,18 @@
 <div class="container">
-  <h1 class="text-center mt-4 mb-3">All Pets</h1>
-
+  <%# Website switcheroooo switch thing %>
+  <div>
+    <h2>Cat / Dog</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <%# current pets looking for  %>
+  <h1 class="text-center mt-4 mb-3">Looking for Now</h1>
   <div class="row">
     <% @pets.reverse.each do |pet| %>
       <%= link_to pet_path(pet) do %>
-      <div class="co-12 colsm-6 col-md-4 mb-3">
+      <div class="co-12 colsm-6 col-md-6 mb-3">
         <div class="card-trip">
           <%= cl_image_tag pet.photo.key %>
           <div class="card-trip-infos">
@@ -19,5 +27,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
