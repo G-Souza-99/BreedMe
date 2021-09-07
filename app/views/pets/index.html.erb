@@ -1,15 +1,16 @@
 <div id="change-switcher" class="">
   <div class="container">
+
+    <%# current pets looking for  %>
+    <h1 class="text-center mt-4 mb-3">Looking for Now</h1>
     <%# Website switcheroooo switch thing %>
-    <div class="switcheroo">
+    <div class="switcheroo offset-md-11 offset-sm-8">
       <h2>Dog / Cat</h2>
       <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
-    <%# current pets looking for  %>
-    <h1 class="text-center mt-4 mb-3">Looking for Now</h1>
     <div class="row">
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>

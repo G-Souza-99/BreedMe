@@ -3,8 +3,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 24px;
+  width: 65px;
+  height: 35px;
 }
 
 /* Hide checkbox */
@@ -30,8 +30,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
+  width: 27px;
+  height: 27px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -45,14 +45,14 @@ input:checked + .slider {
 
 /* make the thing move, webkit is for android view and ms is for explorer 10 */
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 24px;
 }
 
 /* Ball thing */

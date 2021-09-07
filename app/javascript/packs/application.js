@@ -23,8 +23,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { changeClass } from '../components/change_Class';
-import { initBGCheckbox } from "../components/changeBG";
+import { changeClass } from '../components/initChangeClass';
+import { initBGCheckbox } from "../components/initChangeBG";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
