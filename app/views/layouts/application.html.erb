@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <% unless params[:controller] == "pages" || params[:controller].include?("devise") %>
+    <% unless params[:controller] == "pages" || params[:controller].include?("devise") || (params[:controller] == 'registrations' && params[:action] == 'new') %>
       <%= render 'shared/navbar' %>
     <% end %>
 

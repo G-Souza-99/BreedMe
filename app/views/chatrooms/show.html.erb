@@ -13,5 +13,6 @@
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Message" %>
 <% end %>
-
 </div>
+
+<%= link_to "⬅️ Back", :back %>

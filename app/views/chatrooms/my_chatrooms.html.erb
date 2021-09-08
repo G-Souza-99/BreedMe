@@ -1,6 +1,6 @@
 <h1>Messages</h1>
 
-<% @chatrooms.reverse.each do |chat| %>
+<% @chatrooms.each do |chat| %>
   <%= link_to chatroom_path(chat) do %>
 
   <% if chat.owner.photo.attached? %>
@@ -13,3 +13,5 @@
   <p><%= chat.updated_at.to_date %></p>
   <% end %>
 <% end %>
+
+<%= link_to "⬅️ Back", pets_path %>
