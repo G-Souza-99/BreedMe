@@ -1,4 +1,7 @@
 class Chatroom < ApplicationRecord
   belongs_to :user
-  has_many :messages
+  belongs_to :owner, class_name: 'User'
+  has_many :messages, dependent: :destroy
+
+  validates :user, uniqueness: {scope: :owner}
 end
