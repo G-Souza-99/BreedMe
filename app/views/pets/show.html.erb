@@ -1,6 +1,20 @@
 <div class="container p-5">
   <h2 class="text-center">Pet information</h2>
-  <%= link_to "⬅️ Back", :back %>
+  
+  <% if session[:last_page] == 'my_pets' %>
+    <%= link_to "⬅️ Back",  my_pets_pets_path %>
+
+    <% if policy(@pet).edit? %>
+      <%= link_to "📝 Edit", edit_pet_path(@pet) %>
+    <% end %>
+
+    <% if policy(@pet).destroy? %>
+      <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
+    <% end %>
+
+  <% else %>
+    <%= link_to "⬅️ Back", pets_path %>
+  <% end %>
 
   <div class="row class-bg-color">
     <div class="avatar-dog col-md-4 mt-5 mb-5">
@@ -37,6 +51,7 @@
   </div>
 </div>
 <%# somehow add on_heat no show %>
+
 <% if @pet.user != current_user %>
   <% if @chatroom.present?  %>
     <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>

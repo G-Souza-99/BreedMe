@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     pets_path
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name photo])
   end
 end

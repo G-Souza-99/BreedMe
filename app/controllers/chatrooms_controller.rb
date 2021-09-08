@@ -13,4 +13,9 @@ class ChatroomsController < ApplicationController
     @message = Message.new(user: @chatroom.user, chatroom: @chatroom)
     authorize @chatroom
   end
+
+  def my_chatrooms
+    @chatrooms = Chatroom.where(user: current_user)
+    authorize Chatroom
+  end
 end

@@ -12,4 +12,8 @@ class ChatroomPolicy < ApplicationPolicy
   def create?
     record.user == user
   end
+
+  def my_chatrooms?
+    true
+  end
 end
