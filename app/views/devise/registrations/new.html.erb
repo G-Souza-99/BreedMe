@@ -1,25 +1,46 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="mt-5">
+    <div class=" mt-5 text-center our-forms justify-content-center ">
+      <div class="d-flex justify-content-center">
+        <a href=""><i class="fas fa-arrow-left"></i></a>
+        <h2>About You</h2>
+        <a href=""><i class="fas fa-arrow-right"></i></a>
+      </div>
+      <h1>Welcome to BreedMe!</h1>
+      <div class="">
+        <div class="row text-center d-flex justify-content-center">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+            <div class="form-inputs mt-4">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          label: false,
+                          placeholder: "email",
+                          input_html: { autocomplete: "email" }%>
+              <div class="space-class"></div>
+              <%= f.input :password,
+                          required: true,
+                          label: false,
+                          placeholder: "password",
+                          input_html: { autocomplete: "new-password" } %>
+              <div class="space-class"></div>
+              <%= f.input :password_confirmation,
+                          required: true,
+                          label: false,
+                          placeholder: "password confirmation",
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+            </div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+            <div class="form-actions mb-5">
+              <%= f.button :submit, "Sign up", class:"btn-ours" %>
+            </div>
+          <% end %>
+        </div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
