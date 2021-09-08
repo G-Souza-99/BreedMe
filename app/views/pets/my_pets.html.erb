@@ -1,6 +1,6 @@
 <h1>My pets</h1>
 
-<% @pets.each do |pet| %>
+<% @pets.reverse.each do |pet| %>
   <%= link_to pet_path(pet) do %>
   <%= cl_image_tag pet.photo.key, width: 200, height: 150, crop: :fill %>
   <h2><%= pet.name %></h2>

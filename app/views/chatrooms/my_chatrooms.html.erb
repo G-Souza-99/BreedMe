@@ -1,0 +1,15 @@
+<h1>Messages</h1>
+
+<% @chatrooms.reverse.each do |chat| %>
+  <%= link_to chatroom_path(chat) do %>
+
+  <% if chat.owner.photo.attached? %>
+    <%= cl_image_tag chat.owner.photo.key, class: "avatar" %>
+  <% else %>
+    <%= image_tag "avatar.jpeg", class: "avatar" %>
+  <% end %>
+
+  <h2><%= "#{chat.owner.first_name} #{chat.owner.last_name}" %></h2>
+  <p><%= chat.updated_at.to_date %></p>
+  <% end %>
+<% end %>
