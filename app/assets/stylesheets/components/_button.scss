@@ -1,0 +1,16 @@
+.btn-ours{
+  background: var(--yellow);
+  color: var(--white);
+  height: 62px;
+  border-width: 0;
+  width: 284px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  letter-spacing: 1.1px;
+  &:hover{
+    background: var(--pink);
+    color: var(--white);
+  }
+}

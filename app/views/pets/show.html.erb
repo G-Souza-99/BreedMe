@@ -37,3 +37,10 @@
   </div>
 </div>
 <%# somehow add on_heat no show %>
+<% if @pet.user != current_user %>
+  <% if @chatroom.present?  %>
+    <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
+  <% else %>
+    <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
+  <% end %>
+<% end %>
