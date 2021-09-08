@@ -16,7 +16,7 @@
             <% if resource.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
             <% else %>
-              <%= image_tag "avatar.jpeg", class: "avatar-large" %>
+              <%= image_tag "avatar.jpg", class: "avatar-large" %>
             <% end %>
 
               <%= f.input :photo, label: false, as: :file %>
