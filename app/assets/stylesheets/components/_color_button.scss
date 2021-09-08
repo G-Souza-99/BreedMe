@@ -15,21 +15,17 @@
     background-color: transparent;
   }
 
-  &.btn-yellow:hover {
+  &.btn-yellow:hover, &.btn-yellow:active, &.btn-yellow:focus {
     background-color: var(--yellow);
     border-color: var(--yellow);
-    &:active{
-    background-color: var(--yellow);
-    border-color: var(--yellow);
-    }
+    outline: none;
+    color:white;
   }
 
-  &.btn-pink:hover {
+  &.btn-pink:hover, &.btn-pink:active, &.btn-pink:focus {
     background-color: var(--pink);
     border-color: var(--pink);
-    &:active{
-    background-color: var(--pink);
-    border-color: var(--pink);
-    }
+    outline: none;
+    color:white;
   }
 }
