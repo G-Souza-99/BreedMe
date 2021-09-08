@@ -1,10 +1,13 @@
 <div class="container">
-  <div class="row">
-    <div class="offset-md-4 col-sm-12 col-md-4">
-      <div class="our-forms">
-        <a href="">⬅</a><h2>About You</h2>
-        <h1>Welcome Back!</h1>
-        <div class="row">
+  <div class="">
+    <div class=" text-center our-forms justify-content-center ">
+      <div class="d-flex justify-content-center ">
+        <a href=""><i class="fas fa-arrow-left"></i></a>
+        <h2>About You</h2>
+      </div>
+      <h1>Welcome Back!</h1>
+      <div class="">
+        <div class="row text-center d-flex justify-content-center">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
               <%= f.input :email,
@@ -17,7 +20,7 @@
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
 
-            <div class="form-actions">
+            <div class="form-actions mb-5">
               <%= f.button :submit, "Log in", class:"btn-ours"%>
             </div>
           <% end %>
