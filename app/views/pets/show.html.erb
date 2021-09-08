@@ -1,8 +1,8 @@
 <h1>Pet information</h1>
 
-<%= link_to "⬅️ Back", :back %>
-
 <% if session[:last_page] == 'my_pets' %>
+  <%= link_to "⬅️ Back",  my_pets_pets_path %>
+
   <% if policy(@pet).edit? %>
     <%= link_to "📝 Edit", edit_pet_path(@pet) %>
   <% end %>
@@ -10,6 +10,9 @@
   <% if policy(@pet).destroy? %>
     <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
   <% end %>
+
+<% else %>
+  <%= link_to "⬅️ Back", pets_path %>
 <% end %>
 
 <p><%= cl_image_tag @pet.photo.key, width: 200, height: 150, crop: :fill %></p>
