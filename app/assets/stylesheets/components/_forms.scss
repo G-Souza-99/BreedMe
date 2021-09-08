@@ -1,0 +1,31 @@
+.our-forms{
+  input:not([type=checkbox]){
+    height: 50px;
+    width: 324px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  }
+
+  h1{
+    font-size: 3.4em;
+    font-weight: bold;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--yellow);
+    &:hover{
+      color:var(--pink);
+    }
+    i{
+      font-size: 2em;
+      margin: 0 50px 0 50px;
+    }
+  }
+  .width-class{
+    width:126px;
+  }
+  .space-class{
+    margin-top:30px;
+  }
+}
