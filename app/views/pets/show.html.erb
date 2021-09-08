@@ -1,6 +1,6 @@
 <div class="container p-5">
   <h2 class="text-center">Pet information</h2>
-  
+
   <% if session[:last_page] == 'my_pets' %>
     <%= link_to "⬅️ Back",  my_pets_pets_path %>
 
@@ -23,7 +23,6 @@
     <div class="col-md-8  mt-5 align-text-h1">
       <h1><%= @pet.name %></h1>
       <h2><%= @pet.breed %></h2>
-           <p><%= @pet.pet_type == 'dog' ? '🐶' : '🐱' %> </p>
     </div>
     <% if session[:last_page] == 'my_pets' %>
       <% if policy(@pet).edit? %>
@@ -45,17 +44,15 @@
     <div class="col-md-8">
     <div class="text-justify margin-description">
       <p>Description: <%= @pet.description %></p>
-      <button class="btn-ours mt-4">Message Owner</button>
+      <button class="btn-ours mt-4"><% if @pet.user != current_user %>
+        <% if @chatroom.present?  %>
+          <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
+        <% else %>
+          <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
+        <% end %>
+      <% end %></button>
     </div>
     </div>
   </div>
 </div>
 <%# somehow add on_heat no show %>
-
-<% if @pet.user != current_user %>
-  <% if @chatroom.present?  %>
-    <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
-  <% else %>
-    <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
-  <% end %>
-<% end %>
