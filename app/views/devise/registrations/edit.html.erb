@@ -1,9 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Profile</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <% if resource.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+  <% else %>
+    <%= image_tag "avatar.jpeg", class: "avatar-large" %>
+  <% end %>
+
+    <%= f.input :photo, as: :file %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -26,7 +33,10 @@
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
+
 <% end %>
+
+<%# depois de fazer update quero que me redirecione para pets_path %>
 
 <h3>Want to leave?</h3>
 <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
@@ -34,4 +44,4 @@
 <h3>Unhappy?</h3>
 <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", pets_path %>

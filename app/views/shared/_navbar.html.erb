@@ -17,7 +17,13 @@
             <a href="#", class= "dropdown-item"> Messages </a>
             <%= link_to "My Pets", my_pets_pets_path , class: "dropdown-item" %>
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
-            <%= image_tag "avatar.png", class: "avatar dropdown-toggle" %>
+            <%# avatar na navbar %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag "avatar.jpeg", class: "avatar" %>
+            <% end %>
+            <%# .. %>
           </div>
         </div>
       <% end %>
