@@ -8,6 +8,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    @chatroom = Chatroom.find_by(user: current_user, owner: @pet.user)
   end
 
   def new

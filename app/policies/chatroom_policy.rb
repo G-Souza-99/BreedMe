@@ -8,4 +8,8 @@ class ChatroomPolicy < ApplicationPolicy
   def show?
     record.user == user
   end
+
+  def create?
+    record.user == user
+  end
 end
