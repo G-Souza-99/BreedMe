@@ -6,11 +6,10 @@
     <div class="header-options">
       <h4 class="mr-4 pt-3">Have an account?</h4>
       <% if user_signed_in? %>
-        <button><%= link_to "Sign in", pets_path %></button>
+        <%= link_to "Sign in", pets_path, class: 'btn btn-color' %>
       <% else %>
-        <button><%= link_to "Sign in", new_user_session_path, class: "nav-link" %></button>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-color" %>
       <% end %>
-
     </div>
   </div>
   <%# Hero Banner %>

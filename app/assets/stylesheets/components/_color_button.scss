@@ -1,0 +1,31 @@
+.btn-color {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  filter: drop-shadow(0px 4px 4px rgba(var(--rgb-black), 0.25));
+  width: 95px;
+  height: 50px;
+  font-size: 0.9em;
+  color: var(--black);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active{
+    background-color: transparent;
+  }
+
+  &.btn-yellow:hover, &.btn-yellow:active, &.btn-yellow:focus {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    outline: none;
+    color:white;
+  }
+
+  &.btn-pink:hover, &.btn-pink:active, &.btn-pink:focus {
+    background-color: var(--pink);
+    border-color: var(--pink);
+    outline: none;
+    color:white;
+  }
+}
