@@ -1,4 +1,12 @@
 class ChatroomsController < ApplicationController
+  def create
+    @pet = Pet.find(params[:pet_id])
+    @chatroom = Chatroom.create(user: current_user, owner: @pet.user)
+    authorize @chatroom
+
+    redirect_to chatroom_path(@chatroom)
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @chatroom.user = current_user
