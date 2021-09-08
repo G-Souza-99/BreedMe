@@ -10,11 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
 
-    collection do
-      get :my_chatrooms
-    end
+    # collection do
+    #   get :my_chatrooms
+    # end
   end
 end

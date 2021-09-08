@@ -1,4 +1,8 @@
 class ChatroomsController < ApplicationController
+  def index
+    @chatrooms = policy_scope(Chatroom)
+  end
+
   def create
     @pet = Pet.find(params[:pet_id])
     @chatroom = Chatroom.create(user: current_user, owner: @pet.user)

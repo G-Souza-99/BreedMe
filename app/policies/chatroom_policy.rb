@@ -1,7 +1,7 @@
 class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user).or(scope.where(owner: user))
     end
   end
 
