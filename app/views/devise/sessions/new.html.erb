@@ -1,22 +1,27 @@
 <div class="container">
-  <div class="">
+  <div class="mt-5">
     <div class=" mt-5 text-center our-forms justify-content-center ">
       <div class="d-flex justify-content-center">
         <a href=""><i class="fas fa-arrow-left"></i></a>
         <h2>About You</h2>
-        <a href=""><i class="fas fa-arrow-right"></i></a>
+        <div class="width-class"></div>
       </div>
       <h1>Welcome Back!</h1>
       <div class="">
         <div class="row text-center d-flex justify-content-center">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs">
+            <div class="form-inputs mt-4">
               <%= f.input :email,
                           required: false,
                           autofocus: true,
+                          label: false,
+                          placeholder: "email",
                           input_html: { autocomplete: "email" } %>
+              <div class="space-class"></div>
               <%= f.input :password,
                           required: false,
+                          label: false,
+                          placeholder: "password",
                           input_html: { autocomplete: "current-password" } %>
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>

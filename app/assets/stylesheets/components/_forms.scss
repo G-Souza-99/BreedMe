@@ -18,11 +18,14 @@
       color:var(--pink);
     }
     i{
-      font-size: 30px;
+      font-size: 2em;
       margin: 0 50px 0 50px;
     }
   }
-  p{
-    color: var(--grey);
+  .width-class{
+    width:126px;
+  }
+  .space-class{
+    margin-top:30px;
   }
 }
