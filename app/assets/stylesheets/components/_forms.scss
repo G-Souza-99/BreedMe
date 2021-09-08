@@ -1,5 +1,5 @@
 .our-forms{
-  input:not([type=checkbox]){
+  input:not([type=checkbox]):not([type=file]){
     height: 50px;
     width: 324px;
     border-radius: 15px;
