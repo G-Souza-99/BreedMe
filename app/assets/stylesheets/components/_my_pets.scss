@@ -8,11 +8,11 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius:20px;
     img{
-      height: 300px;
+      height: 200px;
       width: 100%;
       object-fit: cover;
-      padding:20px;
-      border-radius: 40px;
+      padding:10px;
+      border-radius: 30px;
     }
     h2{
       font-size: 16px;
@@ -24,11 +24,18 @@
       opacity: .7;
       margin: 0;
     }
-  }
-  .my-pet-info{
-
-  }
-  .my-pet-extra{
-
+     .my-pet-info{
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+    }
+    .my-pet-extra{
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+    }
   }
 }
