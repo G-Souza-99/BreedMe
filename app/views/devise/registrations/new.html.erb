@@ -11,7 +11,6 @@
         <div class="row text-center d-flex justify-content-center">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
-
             <div class="form-inputs mt-4">
               <%= f.input :email,
                           required: true,
@@ -33,7 +32,6 @@
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" } %>
             </div>
-
             <div class="form-actions mb-5">
               <%= f.button :submit, "Sign up", class:"btn-ours" %>
             </div>

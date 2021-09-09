@@ -28,7 +28,7 @@
     font-size: 1rem;
     font-weight: bold;
     border-radius: 6px;
-    box-shadow: 0px 4px 12px var(--black);
+    box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.35);
     letter-spacing: 1.1px;
     &:hover{
       background: var(--pink);
