@@ -1,5 +1,5 @@
 <div class="container p-5">
-  <h2 class="text-center">Pet information</h2>
+  <h3 class="text-center">Pet information</h3>
 
   <% if session[:last_page] == 'my_pets' %>
     <%= link_to "⬅️ Back",  my_pets_pets_path %>
@@ -44,13 +44,17 @@
     <div class="col-md-8">
     <div class="text-justify margin-description">
       <p>Description: <%= @pet.description %></p>
-      <button class="btn-ours mt-4"><% if @pet.user != current_user %>
-        <% if @chatroom.present?  %>
-          <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
+      <% if @pet.user != current_user %>
+        <button class="btn-ours mt-4">
+          <% if @chatroom.present?  %>
+            <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
+          <% else %>
+            <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
+          <% end %>
+        </button>
         <% else %>
-          <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
-        <% end %>
-      <% end %></button>
+          <h4><strong>You are this pet's owner</strong></h4>
+      <% end %>
     </div>
     </div>
   </div>
