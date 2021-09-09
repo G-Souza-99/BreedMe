@@ -1,17 +1,30 @@
-<h1>My pets</h1>
+<div class="container">
+  <div class="my-pets">
+    <h1 class="text-center mt-4 mb-3">My pets</h1>
+    <div class="row">
+      <% @pets.reverse.each do |pet| %>
+        <%= link_to pet_path(pet) do %>
+        <div class="co-12 colsm-6 col-md-6 mb-3">
+          <div class="my-pet-card">
+            <%= cl_image_tag pet.photo.key%>
+            <div class="my-pet-info">
+              <div>
+                <h2><%= pet.name %></h2>
+                <p><%= pet.breed %></p>
+              </div>
+              <h2 class="my-pet-extrax"><%= pet.sex %></h2>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
-<% @pets.reverse.each do |pet| %>
-  <%= link_to pet_path(pet) do %>
-  <%= cl_image_tag pet.photo.key, width: 200, height: 150, crop: :fill %>
-  <h2><%= pet.name %></h2>
-  <p><%= pet.breed %></p>
-  <p><%= pet.sex %></p>
-  <% end %>
-<% end %>
+    <h3>Add a new pet</h3>
+    <% if policy(Pet).create? %>
+      <%= link_to '+ Add', new_pet_path %>
+    <% end %>
 
-<h3>Add a new pet</h3>
-<% if policy(Pet).create? %>
-  <%= link_to '+ Add', new_pet_path %>
-<% end %>
-
-<p><%= link_to "Back", pets_path %></p>
+    <p><%= link_to "Back", pets_path %></p>
+  </div>
+</div>
