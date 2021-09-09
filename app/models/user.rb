@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :pets, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
 end
