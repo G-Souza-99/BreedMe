@@ -1,0 +1,34 @@
+.message-container-content{
+  margin-bottom: 0px !important;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.chatroom-container{
+  overflow: auto;
+  max-height: 500px;
+}
+.message-container {
+  margin-top: 16px;
+}
+.profile-img-pet{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  img{
+    width: 100px;
+    border-radius: 50%;
+  }
+  h2{
+    font-size: 24px;
+  }
+}
+.message-box{
+  margin-top: 30px;
+  input[type=text]{
+    width:1100px !important;
+  }
+}
