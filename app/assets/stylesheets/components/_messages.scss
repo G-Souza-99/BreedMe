@@ -11,6 +11,15 @@
 }
 .message-container {
   margin-top: 16px;
+  flex-direction: column;
+  display: flex;
+  &.own {
+    align-items: flex-end;
+  .message-container-content{
+    background-color: #FEAE13
+  }
+  }
+
 }
 .profile-img-pet{
   display: flex;
