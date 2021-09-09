@@ -34,5 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   changeClass();
   initBGCheckbox();
   initChangeButton();
-  initUploadImage();
+  // initUploadImage();
 });
