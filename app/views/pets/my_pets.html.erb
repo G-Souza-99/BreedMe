@@ -5,7 +5,7 @@
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>
         <div class="co-12 colsm-6 col-md-4 mb-3">
-          <div class="my-pet-card m-1">
+          <div class="my-pet-card m-1 mt-3">
             <%= cl_image_tag pet.photo.key%>
             <div class="my-pet-info">
               <div>
