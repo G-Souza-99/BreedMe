@@ -13,4 +13,8 @@
     background: var(--pink);
     color: var(--white);
   }
+  a, &:hover{
+    text-decoration: none;
+    color: var(--white);
+  }
 }

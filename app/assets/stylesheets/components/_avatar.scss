@@ -3,11 +3,34 @@
   height: 40px;
   border-radius: 50%;
 }
-.avatar-large {
-  width: 56px;
-  height: 56px;
+.upload-button {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  transition: all 0.3 ease;
+  background-size: contain;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid var(--black);
+
+  &:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=75);
+    cursor: pointer;
+
+    .fa-camera {
+      opacity: 1;
+    }
+  }
 }
+
+.fa-camera{
+  font-size: 2em;
+  opacity: 0;
+  transition: all .3s ease;
+  color: #34495e;
+}
+
 .avatar-bordered {
   width: 40px;
   height: 40px;
