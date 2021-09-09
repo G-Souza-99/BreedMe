@@ -3,10 +3,14 @@
   height: 40px;
   border-radius: 50%;
 }
-.avatar-large {
-  width: 56px;
-  height: 56px;
+.avatar-large-us {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  &:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=75);
+  }
 }
 .avatar-bordered {
   width: 40px;

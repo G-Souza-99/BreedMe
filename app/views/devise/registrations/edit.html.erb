@@ -12,12 +12,15 @@
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs mt-4">
-              <% if resource.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
-              <% else %>
-                <%= image_tag "avatar.jpg", class: "avatar-large" %>
-              <% end %>
-              <%= f.input :photo, label: false, as: :file %>
+              <div class="upload-button">
+                <% if resource.photo.attached? %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar-large-us", id:"upload-photo" %>
+                <% else %>
+                  <%= image_tag "avatar.jpg", class: "avatar-large-us", id:"upload-photo" %>
+                <% end %>
+                <i class="fas fa-camera" aria-hidden="false"></i>
+              </div>
+              <%= f.input :photo, label: false, as: :file, id:"photo-button" %>
               <%= f.input :email, required: true, label: false, placeholder: "email", autofocus: true %>
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
