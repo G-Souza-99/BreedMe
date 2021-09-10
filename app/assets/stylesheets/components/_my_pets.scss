@@ -9,6 +9,9 @@
       color: var(--yellow);
     }
   }
+  h3{
+    font-size : 2.4em;
+  }
   .my-pet-card{
     overflow: hidden;
     background: white;
@@ -45,11 +48,10 @@
       align-items: flex-end;
       position: relative;
     }
-    .my-pet-extra{
+    .my-pet-extrax{
       position: absolute;
-      right: 16px;
-      top: -20px;
-      width: 40px;
+      right: 33px;
+      bottom: 25px;
     }
 
   }

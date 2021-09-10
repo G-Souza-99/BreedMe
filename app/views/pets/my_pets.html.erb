@@ -1,7 +1,22 @@
 <div class="container">
   <div class="my-pets">
     <h1 class="text-center mt-4 mb-3">My pets</h1>
+    <p><%= link_to "Back", pets_path %></p>
     <div class="row">
+    <div class="co-12 colsm-6 col-md-4 mb-3">
+      <div class="my-pet-card m-1 mt-3">
+      <%= image_tag "avatar.jpg" %>
+        <div class="my-pet-info">
+          <div>
+            <h2>Add a new pet</h2>
+            <% if policy(Pet).create? %>
+              <%= link_to '+ Add', new_pet_path %>
+            <% end %>
+          </div>
+          <h2 class="my-pet-extrax">pet sex</h2>
+        </div>
+      </div>
+    </div>
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>
         <div class="co-12 colsm-6 col-md-4 mb-3">
@@ -19,12 +34,5 @@
         </div>
       <% end %>
     </div>
-
-    <h3>Add a new pet</h3>
-    <% if policy(Pet).create? %>
-      <%= link_to '+ Add', new_pet_path %>
-    <% end %>
-
-    <p><%= link_to "Back", pets_path %></p>
   </div>
 </div>
