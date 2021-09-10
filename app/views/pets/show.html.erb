@@ -1,47 +1,38 @@
 <div class="container p-5">
-  <h3 class="text-center">Pet information</h3>
-
-  <% if session[:last_page] == 'my_pets' %>
-    <%= link_to "⬅️ Back",  my_pets_pets_path %>
-
-    <% if policy(@pet).edit? %>
-      <%= link_to "📝 Edit", edit_pet_path(@pet) %>
-    <% end %>
-
-    <% if policy(@pet).destroy? %>
-      <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
-    <% end %>
-
-  <% else %>
-    <%= link_to "⬅️ Back", pets_path %>
-  <% end %>
-
-  <div class="row class-bg-color">
-    <div class="avatar-dog col-md-4 mt-5 mb-5">
-      <%= cl_image_tag @pet.photo.key %>
-    </div>
-    <div class="col-md-8  mt-5 align-text-h1">
-      <h1><%= @pet.name %></h1>
-      <h2><%= @pet.breed %></h2>
-    </div>
+  <div class="our-forms m-2">
     <% if session[:last_page] == 'my_pets' %>
+      <%= link_to "⬅️ Back",  my_pets_pets_path %>
+
       <% if policy(@pet).edit? %>
         <%= link_to "📝 Edit", edit_pet_path(@pet) %>
       <% end %>
+
       <% if policy(@pet).destroy? %>
         <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
       <% end %>
+
+    <% else %>
+      <%= link_to pets_path do %>
+    <i class="fas fa-arrow-left mr-0 m-1"></i>
+      <% end %>
     <% end %>
-   </div>
-  <div class="row">
-  <div class="col-md-4 margin-list">
-    <ul class="list-unstyled">
-      <li class="pb-4">Sex: <%= @pet.sex %></li>
-      <li class="pb-4">Birthday: <%= @pet.birthday %></li>
-      <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
-    </ul>
+  </div>
+
+  <div class="row class-bg-color">
+    <div class="avatar-dog col-md-4 m-5">
+      <%= cl_image_tag @pet.photo.key %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6  mt-5 align-text-h1">
+      <h1><%= @pet.name %></h1>
+      <h2><%= @pet.breed %></h2>
+      <div class="col margin-list">
+        <ul class="list-unstyled">
+          <li class="pb-4">Sex: <%= @pet.sex %></li>
+          <li class="pb-4">Birthday: <%= @pet.birthday %></li>
+          <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
+        </ul>
+      </div>
+    </div>
     <div class="text-justify margin-description">
       <p>Description: <%= @pet.description %></p>
       <% if @pet.user != current_user %>
@@ -56,6 +47,19 @@
           <h4><strong>You are this pet's owner</strong></h4>
       <% end %>
     </div>
+    <% if session[:last_page] == 'my_pets' %>
+      <% if policy(@pet).edit? %>
+        <%= link_to "📝 Edit", edit_pet_path(@pet) %>
+      <% end %>
+      <% if policy(@pet).destroy? %>
+        <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
+      <% end %>
+    <% end %>
+   </div>
+  <div class="row">
+
+    <div class="col-md-8">
+
     </div>
   </div>
 </div>
