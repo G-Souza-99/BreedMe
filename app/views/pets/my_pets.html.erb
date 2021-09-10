@@ -8,7 +8,7 @@
         <div class="my-pet-card m-1 mt-3">
         <%= image_tag "avatar.jpg" %>
           <div class="my-pet-info">
-            <div>
+            <div class="pet-text">
               <h2>Add a new pet!</h2>
               <% if policy(Pet).create? %>
                 <%= link_to '+ Add', new_pet_path, id:"add-pet-button" %>
@@ -24,7 +24,7 @@
           <div class="my-pet-card m-1 mt-3">
             <%= cl_image_tag pet.photo.key%>
             <div class="my-pet-info">
-              <div>
+              <div class="pet-text">
                 <h2><%= pet.name %></h2>
                 <p><%= pet.breed %></p>
               </div>
