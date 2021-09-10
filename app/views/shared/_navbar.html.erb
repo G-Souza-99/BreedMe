@@ -19,7 +19,7 @@
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%# avatar na navbar %>
             <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar", height:200, width: 200, crop:"thumb" %>
             <% else %>
               <%= image_tag "avatar.jpg", class: "avatar" %>
             <% end %>
