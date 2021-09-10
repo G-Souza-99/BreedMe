@@ -23,16 +23,6 @@
     <div class="col-md-8  mt-5 align-text-h1">
       <h1><%= @pet.name %></h1>
       <h2><%= @pet.breed %></h2>
-    </div>
-    <% if session[:last_page] == 'my_pets' %>
-      <% if policy(@pet).edit? %>
-        <%= link_to "📝 Edit", edit_pet_path(@pet) %>
-      <% end %>
-      <% if policy(@pet).destroy? %>
-        <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
-      <% end %>
-    <% end %>
-   </div>
   <div class="row">
   <div class="col-md-4 margin-list">
     <ul class="list-unstyled">
