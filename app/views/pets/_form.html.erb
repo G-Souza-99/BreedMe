@@ -1,19 +1,73 @@
 <% breeds = ['rafeiro', 'não rafeiro', 'adicionar restantes raças'] %>
 
 <%# Atualizar com todas as raças de cães e gatos e fazer a collection ser condicionada de acordo com pet_type %>
-
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :pet_type, as: :radio_buttons, collection: [['dog', 'dog'], ['cat', 'cat']], label_method: :second, value_method: :first %>
-  <%= f.input :sex, as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
-  <%= f.input :breed, as: :select, collection: breeds %>
-  <%= f.input :pedigree_number %>
-  <%= f.label :birthday, 'Birthday' %>
-  <%= f.date_field :birthday, value: Time.now.strftime('%Y-%m-%d'), max: Date.today %>
-  <%= f.input :description %>
-  <%= f.input :on_heat %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container">
+  <div class=" mt-5 text-center our-forms justify-content-center ">
+    <div class="d-flex justify-content-center">
+      <%= link_to root_path,
+      class: '' do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+      <h2>About You</h2>
+      <%= link_to root_path,
+      class: '' do %>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+    </div>
+    <h1>Who are they?</h1>
+    <div class="">
+      <%= simple_form_for(@pet) do |f| %>
+        <div class="form-inputs mt-4">
+          <div class="row">
+            <div class="col-sm">
+              <%= f.input :name %>
+            </div>
+            <div class="col-sm">
+              <%= f.input :pet_type,
+                          as: :select,
+                          collection: [['dog', 'dog'], ['cat', 'cat']],
+                          label_method: :second,
+                          value_method: :first %>
+            </div>
+            <div class="col-sm">
+              <%= f.input :sex,
+                          as: :select,
+                          collection: [['female', 'female'], ['male', 'male']],
+                          label_method: :second,
+                          value_method: :first %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <%= f.input :breed,
+                          as: :select,
+                          collection: breeds %>
+            </div>
+            <div class="col-sm">
+              <%= f.input :pedigree_number %>
+            </div>
+            <div class="col-sm">
+              <%= f.label :birthday,
+                          'Birthday' %>
+              <%= f.date_field :birthday,
+                          value: Time.now.strftime('%Y-%m-%d'),
+                          max: Date.today %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <%= f.input :description %>
+            </div>
+            <div class="col-sm">
+              <%= f.input :photo,
+                      as: :file %>
+            </div>
+          </div>
+          <%= f.input :on_heat %>
+          <%= f.submit class:"btn-ours" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <%# quero tirar o on_heat daqui e colocar nos meus animais apenas cadelas %>

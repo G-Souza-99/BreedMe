@@ -3,12 +3,23 @@
     height:0px;
     width:0px;
   }
-
-  
-
   input:not([type=checkbox]):not([type=file]){
     height: 50px;
     width: 324px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  }
+
+  select{
+    height: 50px;
+    width: 324px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  }
+
+  description{
+    height:100px;
+    width:324px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
   }
