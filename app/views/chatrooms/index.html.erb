@@ -1,4 +1,13 @@
-<h1>Messages</h1>
+<div class=" mt-5 text-center our-forms justify-content-center ">
+  <div class="d-flex justify-content-center">
+  <%= link_to pets_path,
+  class: '' do %>
+    <i class="fas fa-arrow-left mt-3"></i>
+  <% end %>
+<h1 class="mb-3">Messages</h1>
+<div class="width-class"></div>
+</div>
+</div>
 
 <% @chatrooms.each do |chat| %>
   <%= link_to chatroom_path(chat) do %>
