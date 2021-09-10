@@ -1,14 +1,30 @@
 <div class="container">
   <div class="my-pets">
     <h1 class="text-center mt-4 mb-3">My pets</h1>
+    <p><%= link_to "Back", pets_path %></p>
     <div class="row">
+      <div id="add-pet" class="co-12 colsm-6 col-md-4 mb-3">
+        <%# <i class="fas fa-camera"></i> %>
+        <div class="my-pet-card m-1 mt-3">
+        <%= image_tag "avatar.jpg" %>
+          <div class="my-pet-info">
+            <div class="pet-text">
+              <h2>Add a new pet!</h2>
+              <% if policy(Pet).create? %>
+                <%= link_to '+ Add', new_pet_path, id:"add-pet-button" %>
+              <% end %>
+            </div>
+            <h2 class="my-pet-extrax blurry">pet sex</h2>
+          </div>
+        </div>
+      </div>
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>
         <div class="co-12 colsm-6 col-md-4 mb-3">
           <div class="my-pet-card m-1 mt-3">
             <%= cl_image_tag pet.photo.key%>
             <div class="my-pet-info">
-              <div>
+              <div class="pet-text">
                 <h2><%= pet.name %></h2>
                 <p><%= pet.breed %></p>
               </div>
@@ -19,12 +35,5 @@
         </div>
       <% end %>
     </div>
-
-    <h3>Add a new pet</h3>
-    <% if policy(Pet).create? %>
-      <%= link_to '+ Add', new_pet_path %>
-    <% end %>
-
-    <p><%= link_to "Back", pets_path %></p>
   </div>
 </div>

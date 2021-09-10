@@ -9,6 +9,10 @@
       color: var(--yellow);
     }
   }
+  h3{
+    font-size : 2.4em;
+  }
+
   .my-pet-card{
     overflow: hidden;
     background: white;
@@ -45,12 +49,33 @@
       align-items: flex-end;
       position: relative;
     }
-    .my-pet-extra{
+    .my-pet-extrax{
       position: absolute;
-      right: 16px;
-      top: -20px;
-      width: 40px;
+      right: 33px;
+      bottom: 25px;
     }
 
+  }
+}
+.blurry{
+   text-shadow: 0 0 10px rgba(var(--rgb-black),0.4);
+   color: transparent;
+}
+#add-pet{
+  transition: all 0.3 ease;
+  justify-content: center;
+  align-items: center;
+  // display:flex;
+  &:hover{
+    color: var(--yellow);
+    opacity: 0.4;
+    filter: alpha(opacity=25);
+    cursor: pointer;
+    .fa-camera {
+      opacity: 1;
+    }
+  }
+  a{
+    color:var(--yellow);
   }
 }
