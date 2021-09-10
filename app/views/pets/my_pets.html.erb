@@ -3,7 +3,7 @@
     <h1 class="text-center mt-4 mb-3">My pets</h1>
     <p><%= link_to "Back", pets_path %></p>
     <div class="row">
-      <div class="co-12 colsm-6 col-md-4 mb-3 add-pet">
+      <div id="add-pet" class="co-12 colsm-6 col-md-4 mb-3">
         <%# <i class="fas fa-camera"></i> %>
         <div class="my-pet-card m-1 mt-3">
         <%= image_tag "avatar.jpg" %>
@@ -11,7 +11,7 @@
             <div>
               <h2>Add a new pet!</h2>
               <% if policy(Pet).create? %>
-                <%= link_to '+ Add', new_pet_path %>
+                <%= link_to '+ Add', new_pet_path, id:"add-pet-button" %>
               <% end %>
             </div>
             <h2 class="my-pet-extrax blurry">pet sex</h2>

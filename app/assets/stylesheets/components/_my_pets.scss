@@ -59,7 +59,7 @@
    text-shadow: 0 0 10px rgba(var(--rgb-black),0.4);
    color: transparent;
 }
-.add-pet{
+#add-pet{
   transition: all 0.3 ease;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,7 @@
   &:hover{
     color: var(--yellow);
     opacity: 0.4;
-    filter: alpha(opacity=75);
+    filter: alpha(opacity=25);
     cursor: pointer;
     .fa-camera {
       opacity: 1;

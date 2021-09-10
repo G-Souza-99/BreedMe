@@ -27,6 +27,7 @@ import { changeClass } from '../components/initChangeClass';
 import { initBGCheckbox } from "../components/initChangeBG";
 import { initChangeButton } from "../components/initChangeButton";
 import { initUploadImage } from "../components/initUploadImage";
+import { initAddPet } from "../components/initAddPet";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   initBGCheckbox();
   initChangeButton();
   initUploadImage();
+  initAddPet();
 });
