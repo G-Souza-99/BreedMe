@@ -6,16 +6,16 @@ function changeField() {
   const input_breed = document.getElementById("pet_breed");
   input_pet_type.addEventListener("change", (event) => {
     if (document.getElementById("pet_pet_type").value === 'dog') {
+      input_breed.innerHTML = "";
       dog_breed.forEach((breed) => {
-        console.log(input_pet_type.text);
         const element = document.createElement('option');
         element.value = "breed";
         element.text = breed;
         input_breed.insertAdjacentElement("afterbegin", element);
       });
     } else if (document.getElementById("pet_pet_type").value === 'cat') {
+      input_breed.innerHTML = "";
       cat_breed.forEach((breed) => {
-        console.log(input_pet_type.text);
         const element = document.createElement('option');
         element.value = "breed";
         element.text = breed;
