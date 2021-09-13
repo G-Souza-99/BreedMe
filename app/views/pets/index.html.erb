@@ -4,6 +4,14 @@
     <%# current pets looking for  %>
     <h1 class="text-center mt-4 mb-3">Matches at Your Fingertips</h1>
     <h3 class="text-center mt-4 mb-3">Let's start to breed the perfect pet</h3>
+
+    <div class=" text-center mt-4 mb-3">
+      <select class="select2 search-bar" name="breeds[]" multiple="multiple">
+        <option value="O1">Option1</option>
+        <option value="O2">Option2</option>
+      </select>
+    </div>
+
     <%# Website switcheroooo switch thing %>
     <div class="switcheroo offset-md-11 offset-sm-8">
       <h2>Dog / Cat</h2>
@@ -12,6 +20,8 @@
         <span class="slider round"></span>
       </label>
     </div>
+
+
     <div class="row">
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>
