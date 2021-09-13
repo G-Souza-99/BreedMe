@@ -24,4 +24,8 @@ class PetPolicy < ApplicationPolicy
   def my_pets?
     true
   end
+
+  def change_heat?
+    true
+  end
 end

@@ -8,13 +8,13 @@ Rails.application.routes.draw do
     collection do
       get :my_pets
     end
+
+    member do
+      patch :change_heat
+    end
   end
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
-
-    # collection do
-    #   get :my_chatrooms
-    # end
   end
 end
