@@ -57,7 +57,8 @@
       <% end %>
 </div>
 
-<% if @pet.sex == 'female' %>
+
+<% if @pet.sex == 'female' && @pet.user == current_user %>
   <%= button_tag(type: 'button', class: 'btn-ours') do %>
     <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
   <% end %>
