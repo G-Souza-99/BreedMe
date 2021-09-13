@@ -15,7 +15,7 @@
     <div class="row">
       <% @pets.reverse.each do |pet| %>
         <%= link_to pet_path(pet) do %>
-        <div class="co-12 colsm-6 col-md-6 mb-3">
+        <div class="co-12 colsm-6 col-md-4 mb-3">
           <div class="card-trip">
             <%= cl_image_tag pet.photo.key %>
             <div class="card-trip-infos">
@@ -23,7 +23,10 @@
                 <h2><%= pet.name %></h2>
                 <p><%= pet.breed %></p>
               </div>
-              <h2 class="card-trip-pricing"><%= pet.sex %></h2>
+              <div>
+                <%# <%= if pet.includes? pet.pedigree_number class="verified" %>
+                <h2 class="card-trip-pricing"><%= pet.sex %></h2>
+              </div>
             </div>
           </div>
         <% end %>
