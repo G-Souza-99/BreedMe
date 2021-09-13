@@ -3,15 +3,17 @@ const toggleBG = (elm, checked, dog, cat) => {
     elm.classList.remove("yellowbg");
     elm.classList.add("pinkbg");
     console.log("Checkbox is checked.. meow!");
-    console.log(dog);
+    console.log("displaying search with.... cats");
+
     dog.classList.remove("d-block");
     dog.classList.add("d-none");
     cat.classList.add("d-block");
   } else {
     elm.classList.remove("pinkbg");
     elm.classList.add("yellowbg");
+    
     console.log("Checkbox is not checked.. woof!");
-
+    console.log("displaying search with.... dogs");
     cat.classList.remove("d-block");
     cat.classList.add("d-none");
     dog.classList.add("d-block");
