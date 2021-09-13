@@ -29,6 +29,7 @@ import { initChangeButton } from "../components/initChangeButton";
 import { initUploadImage } from "../components/initUploadImage";
 import { initAddPet } from "../components/initAddPet";
 import { initDragAndDrop } from "../components/initDragAndDrop";
+import { initSelect2 } from "../components/initSelect2";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initUploadImage();
   initAddPet();
   initDragAndDrop();
+  initSelect2();
 });
