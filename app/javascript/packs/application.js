@@ -28,7 +28,7 @@ import { initBGCheckbox } from "../components/initChangeBG";
 import { initChangeButton } from "../components/initChangeButton";
 import { initUploadImage } from "../components/initUploadImage";
 import { initAddPet } from "../components/initAddPet";
-import { changeField } from "../components/formBreedCollection";
+import { initChangeField } from "../components/initChangeField";
 import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
 
@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initChangeButton();
   initUploadImage();
   initAddPet();
-  changeField();
+  initChangeField();
   initDragAndDrop();
   initSelect2();
 });
