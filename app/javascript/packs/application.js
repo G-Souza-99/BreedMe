@@ -29,6 +29,7 @@ import { initChangeButton } from "../components/initChangeButton";
 import { initUploadImage } from "../components/initUploadImage";
 import { initAddPet } from "../components/initAddPet";
 import { changeField } from "../components/formBreedCollection";
+import { initDragAndDrop } from "../components/initDragAndDrop";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   initUploadImage();
   initAddPet();
   changeField();
+  initDragAndDrop();
 });
