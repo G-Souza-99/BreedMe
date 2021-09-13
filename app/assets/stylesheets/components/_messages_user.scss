@@ -1,9 +1,10 @@
 
 .show-messages{
-  .user, :hover, h2, p{
-    color: var(--black);
-    text-decoration: none;
-  }
+  .user, h2, p{
+      color: var(--black);
+      text-decoration: none;
+    }
+
   .avatar-message{
     margin-left: 40px;
   }
@@ -15,6 +16,10 @@
     display: flex;
     align-items: center;
     margin-top: 30px;
+    &:hover{
+      opacity: 0.5;
+      background-color: var(--yellow);
+    }
   }
   .card-product .card-product-infos {
     padding: 16px;
@@ -33,24 +38,9 @@
     margin-top: 8px;
 
   }
-  .card-product {
-    img{
-      object-fit: cover;
-    }
-    // height: 60px;
-    // width: 60px;
-    &:hover{
-      background-color: var(--yellowbg);
-      opacity: 0.4;
-      img{
-          object-fit: cover;
-      -webkit-transition:all .9s ease;
-      -moz-transition:all .9s ease;
-      -o-transition:all .9s ease;
-      -ms-transition:all .9s ease;
-      width: 100%;
-      height: 200px;
-        }
+  .card-product img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
     }
   }
-}
