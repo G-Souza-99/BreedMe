@@ -31,7 +31,7 @@ import { initAddPet } from "../components/initAddPet";
 import { initChangeField } from "../components/initChangeField";
 import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
-
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -44,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initChangeField();
   initDragAndDrop();
   initSelect2();
+  initMapbox();
 });

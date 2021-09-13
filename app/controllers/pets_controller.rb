@@ -9,6 +9,11 @@ class PetsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find_by(user: current_user, owner: @pet.user)
+    @marker =
+      {
+        lat: @pet.latitude,
+        lng: @pet.longitude
+      }
   end
 
   def new
