@@ -1,12 +1,8 @@
-<% breeds = ['rafeiro', 'não rafeiro', 'adicionar restantes raças'] %>
-
-<%# Atualizar com todas as raças de cães e gatos e fazer a collection ser condicionada de acordo com pet_type %>
-
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
-  <%= f.input :pet_type, as: :radio_buttons, collection: [['dog', 'dog'], ['cat', 'cat']], label_method: :second, value_method: :first %>
-  <%= f.input :sex, as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
-  <%= f.input :breed, as: :select, collection: breeds %>
+  <%= f.input :pet_type, as: :select, collection: ['dog', 'cat']%>
+  <%= f.input :sex, as: :select, collection: ['female', 'male'] %>
+  <%= f.input :breed, as: :select, collection: [] %>
   <%= f.input :pedigree_number %>
   <%= f.label :birthday, 'Birthday' %>
   <%= f.date_field :birthday, value: Time.now.strftime('%Y-%m-%d'), max: Date.today %>
@@ -16,4 +12,4 @@
   <%= f.submit %>
 <% end %>
 
-<%# quero tirar o on_heat daqui e colocar nos meus animais apenas cadelas %>
+<%# Tirar o on_heat daqui e colocar nos meus animais apenas cadelas %>
