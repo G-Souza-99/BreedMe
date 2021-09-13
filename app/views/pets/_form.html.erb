@@ -28,7 +28,8 @@
                           label_method: :second,
                           value_method: :first,
                           label: false,
-                          selected: 'dog' %>
+                          prompt: "pet type",
+                          select: "pet type"%>
             </div>
             <div class="col-sm">
               <%= f.input :sex,
@@ -37,7 +38,8 @@
                           label_method: :second,
                           value_method: :first,
                           label: false,
-                          selected: 'female' %>
+                          prompt: "pet sex",
+                          select: "pet sex" %>
             </div>
           </div>
           <div class="space-class"></div>
@@ -47,7 +49,8 @@
                           as: :select,
                           collection: [],
                           label: false,
-                          selected: '' %>
+                          prompt: "pet breed",
+                          select: "pet breed" %>
             </div>
             <div class="col-sm">
               <%= f.input :pedigree_number,
