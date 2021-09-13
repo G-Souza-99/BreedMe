@@ -9,6 +9,11 @@ class PetsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find_by(user: current_user, owner: @pet.user)
+    @marker =
+      {
+        lat: @pet.latitude,
+        lng: @pet.longitude
+      }
   end
 
   def new
@@ -47,6 +52,16 @@ class PetsController < ApplicationController
     @pets = Pet.where(user: current_user)
     authorize Pet
     session[:last_page] = 'my_pets'
+  end
+
+  def change_heat
+    set_pet
+    if @pet.on_heat
+      @pet.update(on_heat: false)
+    else
+      @pet.update(on_heat: true)
+    end
+    redirect_to @pet
   end
 
   private
