@@ -1,0 +1,56 @@
+
+.show-messages{
+  .user, :hover, h2, p{
+    color: var(--black);
+    text-decoration: none;
+  }
+  .avatar-message{
+    margin-left: 40px;
+  }
+  .card-product {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+
+  }
+  .card-product {
+    img{
+      object-fit: cover;
+    }
+    // height: 60px;
+    // width: 60px;
+    &:hover{
+      background-color: var(--yellowbg);
+      opacity: 0.4;
+      img{
+          object-fit: cover;
+      -webkit-transition:all .9s ease;
+      -moz-transition:all .9s ease;
+      -o-transition:all .9s ease;
+      -ms-transition:all .9s ease;
+      width: 100%;
+      height: 200px;
+        }
+    }
+  }
+}
