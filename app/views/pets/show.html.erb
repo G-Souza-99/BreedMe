@@ -1,20 +1,25 @@
 <div class="container p-5">
   <div class="our-forms m-2">
-    <% if session[:last_page] == 'my_pets' %>
-      <%= link_to "⬅️ Back",  my_pets_pets_path %>
+    <div class="d-flex">
+      <% if session[:last_page] == 'my_pets' %>
+        <%= link_to my_pets_pets_path do %>
+          <i class="fas fa-arrow-left mr-0 m-1"></i>
+        <% end %>
+      <div class="icons_edit_delete pt-1 pl-1">
+        <% if policy(@pet).edit? %>
+          <%= link_to edit_pet_path(@pet) do %>
+            <i class="fas fa-edit mr-0 m-1"></i>
+          <% end %>
+        <% end %>
 
-      <% if policy(@pet).edit? %>
-        <%= link_to "📝 Edit", edit_pet_path(@pet) %>
-      <% end %>
-
-      <% if policy(@pet).destroy? %>
-        <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
-      <% end %>
-
-    <% else %>
-      <%= link_to pets_path do %>
-    <i class="fas fa-arrow-left mr-0 m-1"></i>
-      <% end %>
+        <% if policy(@pet).destroy? %>
+          <%= link_to pet_path(@pet), method: :delete do %>
+            <i class="fas fa-trash-alt mr-0 m-1"></i>
+          <% end %>
+          <%# redirect to my_pets %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
   </div>
 
@@ -23,13 +28,17 @@
       <%= cl_image_tag @pet.photo.key %>
     </div>
     <div class="col-md-6  mt-5 align-text-h1">
-      <h1><%= @pet.name %></h1>
+      <h1><%= @pet.name %> <% if @pet.on_heat %>
+        ❤️‍🔥
+      <% end %></h1>
       <h2><%= @pet.breed %></h2>
       <div class="col margin-list">
         <ul class="list-unstyled">
           <li class="pb-4">Sex: <%= @pet.sex %></li>
           <li class="pb-4">Birthday: <%= @pet.birthday %></li>
-          <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
+          <% if @pet.pedigree_number %>
+            <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -46,21 +55,10 @@
         <% else %>
           <h4><strong>You are this pet's owner</strong></h4>
       <% end %>
-    </div>
-    <% if session[:last_page] == 'my_pets' %>
-      <% if policy(@pet).edit? %>
-        <%= link_to "📝 Edit", edit_pet_path(@pet) %>
-      <% end %>
-      <% if policy(@pet).destroy? %>
-        <%= link_to "🗑 Delete", pet_path(@pet), method: :delete %>
-      <% end %>
-    <% end %>
-   </div>
-  <div class="row">
-
-    <div class="col-md-8">
-
-    </div>
-  </div>
 </div>
-<%# somehow add on_heat no show %>
+
+<% if @pet.sex == 'female' %>
+  <%= button_tag(type: 'button', class: 'btn-ours') do %>
+    <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
+  <% end %>
+<% end %>

@@ -3,6 +3,12 @@
     height:0px;
     width:0px;
   }
+
+  .icons_edit_delete{
+    font-size: 0.6em !important;
+    align-items: center;
+  }
+
   input:not([type=checkbox]):not([type=file]){
     height: 50px;
     width: 324px;
