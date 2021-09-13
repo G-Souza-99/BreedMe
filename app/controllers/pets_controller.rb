@@ -54,6 +54,16 @@ class PetsController < ApplicationController
     session[:last_page] = 'my_pets'
   end
 
+  def change_heat
+    set_pet
+    if @pet.on_heat
+      @pet.update(on_heat: false)
+    else
+      @pet.update(on_heat: true)
+    end
+    redirect_to @pet
+  end
+
   private
 
   def set_pet

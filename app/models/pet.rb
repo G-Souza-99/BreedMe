@@ -6,9 +6,8 @@ class Pet < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates :name, :sex, :photo, :breed, :pet_type, presence: true
-  validates :pedigree_number, uniqueness: true
 
-  after_initialize :set_default
+  after_create :set_default
 
   def set_default
     if self.sex == "male"
