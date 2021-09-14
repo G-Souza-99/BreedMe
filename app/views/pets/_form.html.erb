@@ -16,12 +16,12 @@
       <%= simple_form_for(@pet) do |f| %>
         <div class="form-inputs mt-4">
           <div class="row">
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :name,
                           label: false,
                           placeholder: "pet name" %>
             </div>
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :pet_type,
                           as: :select,
                           collection: [['dog', 'dog'], ['cat', 'cat']],
@@ -31,7 +31,7 @@
                           prompt: "pet type",
                           select: "pet type"%>
             </div>
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :sex,
                           as: :select,
                           collection: [['female', 'female'], ['male', 'male']],
@@ -44,7 +44,7 @@
           </div>
           <div class="space-class"></div>
           <div class="row">
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :breed,
                           as: :select,
                           collection: [],
@@ -52,12 +52,12 @@
                           prompt: "pet breed",
                           select: "pet breed" %>
             </div>
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :pedigree_number,
                           label: false,
                           placeholder: 'pedigree number' %>
             </div>
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.date_field :birthday,
                           placeholder: 'birthday',
                           value: 'birthday',
@@ -66,23 +66,24 @@
           </div>
           <div class="space-class"></div>
           <div class="row">
-            <div class="col-sm">
+            <div class="co col-md-4">
               <%= f.input :description,
                           label: false,
                           placeholder: 'add a fancy description about your pet'%>
             </div>
 
-            <div class="col-sm">
-              <%= f.input :address,
-                          label: false,
-                          placeholder: 'add your address where'%>
-            </div>
 
-            <div id="drag-field" class="col-sm">
+            <div id="drag-field" class="co col-md-4">
               <p class="text-muted align-center">drag and drop images here</p>
               <%= f.input :photo,
                       as: :file,
                           label: false %>
+            </div>
+
+            <div class="co col-md-4">
+              <%= f.input :address,
+                          label: false,
+                          placeholder: 'add your address where'%>
             </div>
           </div>
           <%= f.submit class:"btn-ours mt-4" %>
@@ -91,5 +92,3 @@
     </div>
   </div>
 </div>
-
-<%# quero tirar o on_heat daqui e colocar nos meus animais apenas cadelas %>
