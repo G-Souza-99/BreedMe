@@ -33,6 +33,7 @@ import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
 import { initMapbox } from '../plugins/init_mapbox';
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();

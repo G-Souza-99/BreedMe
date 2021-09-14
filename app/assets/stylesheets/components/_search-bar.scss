@@ -1,3 +1,23 @@
-.search-bar{
-  width:300px;
+.select2-search__field{
+  min-width: 390px;
+  max-width: 390px;
+  // font-size: 0.9em !important;
+
+}
+.select2-container .select2-search--inline .select2-search__field{
+  height:1.3em !important;
+}
+
+.select2-results{
+  display:none;
+  &:target{
+    display:block;
+  }
+}
+.cat{
+  width:390px;
+}
+
+.dog{
+  width: 390px;
 }
