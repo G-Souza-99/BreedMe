@@ -1,59 +1,46 @@
-<div class="container p-5">
+<div class="container petinfo p-5">
   <div class="our-forms m-2">
     <div class="d-flex">
       <% if session[:last_page] == 'my_pets' %>
         <%= link_to my_pets_pets_path do %>
           <i class="fas fa-arrow-left mr-0 m-1"></i>
         <% end %>
-      <div class="icons_edit_delete pt-1 pl-1">
-        <% if policy(@pet).edit? %>
-          <%= link_to edit_pet_path(@pet) do %>
-            <i class="fas fa-edit mr-0 m-1"></i>
+        <div class="icons_edit_delete pt-1 pl-1">
+          <% if policy(@pet).edit? %>
+            <%= link_to edit_pet_path(@pet) do %>
+              <i class="fas fa-edit mr-0 m-1"></i>
+            <% end %>
           <% end %>
-        <% end %>
-
-        <% if policy(@pet).destroy? %>
-          <%= link_to pet_path(@pet), method: :delete do %>
-            <i class="fas fa-trash-alt mr-0 m-1"></i>
+          <% if policy(@pet).destroy? %>
+            <%= link_to pet_path(@pet), method: :delete do %>
+              <i class="fas fa-trash-alt mr-0 m-1"></i>
+            <% end %>
           <% end %>
-          <%# redirect to my_pets %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-
-  <div class="row class-bg-color">
-    <div class="avatar-dog col-md-4 m-5">
+  <div class="row">
+    <div class="avatar-dog right-col col-md-4">
       <%= cl_image_tag @pet.photo.key %>
-    </div>
-    <div class="col-md-6  mt-5 align-text-h1">
-      <h1><%= @pet.name %> <% if @pet.on_heat %>
-        ❤️‍🔥
-      <% end %></h1>
-      <h2><%= @pet.breed %></h2>
-      <div class="col margin-list">
+      <div class="col right-col-info ">
         <ul class="list-unstyled">
-          <li class="pb-4">Sex: <%= @pet.sex %></li>
+          <li class="pb-3"><i class="fas fa-venus-mars"></i>:         <%= @pet.sex.capitalize %></li>
           <% if @pet.birthday %>
-            <li class="pb-4">Birthday: <%= @pet.birthday %></li>
+            <li class="pb-3"><i class="far fa-calendar-alt"></i>:       <%= @pet.birthday %></li>
           <% end %>
           <% if @pet.pedigree_number %>
-            <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
+            <li class="pb-3"><i class="fas fa-list-ol"></i>:       <%= @pet.pedigree_number %></li>
           <% end %>
         </ul>
-      </div>
-    </div>
-    <div class="text-justify margin-description">
-      <p>Description: <%= @pet.description %></p>
-      <% if @pet.user != current_user %>
-        <button class="btn-ours mt-4">
-          <% if @chatroom.present?  %>
-            <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
-          <% else %>
-            <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
-          <% end %>
-        </button>
+        <% if @pet.user != current_user %>
+          <button class="btn-ours mt-4 mb-5">
+            <% if @chatroom.present?  %>
+              <%= link_to "Message Owner", chatroom_path(@chatroom.id) %>
+            <% else %>
+              <%= link_to "Message Owner", pet_chatrooms_path(@pet), method: :post %>
+            <% end %>
+          </button>
         <% else %>
           <h4><strong>You are this pet's owner</strong></h4>
       <% end %>
@@ -61,12 +48,24 @@
         <%= button_tag(type: 'button', class: 'btn-ours') do %>
           <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
         <% end %>
-      <% end %>
+        <% if @pet.sex == 'female' && @pet.user == current_user %>
+          <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
+            <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @marker.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-md-8 left-col ">
+      <h1><%= @pet.name.capitalize  %><% if @pet.on_heat %> <i class="fas fa-hand-holding-heart"></i><% end %></h1>
+      <h2><%= @pet.breed.capitalize %></h2>
+      <div class="text-justify mt-5 mb-5">
+        <p><strong>Description:</strong><%= @pet.description %></p>
+      </div>
+      <div class="col-md-12" id="map"
+        style="width: 100%; height: 300px; border-radius:4px;"
+        data-markers="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
 </div>
