@@ -8,8 +8,8 @@
   <div class="container">
 
     <%# current pets looking for  %>
-    <h1 class="text-center mt-4 mb-3">Matches at Your Fingertips</h1>
-    <h3 class="text-center mt-4 mb-3">Let's start to breed the perfect pet</h3>
+    <h1 class="text-center mt-5">Matches at your fingertips</h1>
+    <h3 class="text-center mt-4 mb-3">Let's breed the perfect pet!</h3>
 
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-dog">
       <%= select_tag "pet_breed",
@@ -51,7 +51,10 @@
             <%= cl_image_tag pet.photo.key %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= pet.name %></h2>
+                <h2><%= pet.name %><% if pet.pedigree_number %>
+                  <i class="far fa-check-circle"></i>
+                  <p id="verified_caption">has a pedigree number</p>
+                <% end %></h2>
                 <p><%= pet.breed %></p>
               </div>
               <div>
