@@ -1,0 +1,26 @@
+.fa-check-circle {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+[data-tooltip]:before {
+    position : absolute;
+     content : attr(data-tooltip);
+     opacity : 0;
+     font-size: 12px;
+     color: #0f0000;
+     margin-left: 25px;
+}
+
+[data-tooltip]:hover:before {
+    opacity : 1;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+    pointer-events: none;
+}
+
+.super_tooltip {
+  color: #FEAE13;
+  text-decoration: none;
+}

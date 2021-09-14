@@ -54,9 +54,8 @@
                 <div class='d-flex'>
                   <h2 class="mr-2"><%= pet.name %></h2>
                     <% if pet.pedigree_number %>
-                      <div class="verified_icon d-flex">
-                      <i class="far fa-check-circle"></i>
-                        <p id="verified_caption"> has a pedigree number</p>
+                      <div data-tooltip="has a pedigree number" class="d-flex">
+                        <i class="far fa-check-circle super_tooltip"></i>
                       </div>
                     <% end %>
                   </div>
