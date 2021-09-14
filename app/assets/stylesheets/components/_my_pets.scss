@@ -18,13 +18,7 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius:20px;
-    &:hover{
-      width: 102%;
-      height: 102%;
-      position: relative;
-      bottom: 5%;
-      right: 2%;
-    }
+
     img{
       height: 200px;
       width: 100%;
@@ -65,15 +59,10 @@
   transition: all 0.3 ease;
   justify-content: center;
   align-items: center;
-  // display:flex;
   &:hover{
-    color: var(--yellow);
-    opacity: 0.4;
+    opacity: 0.5;
     filter: alpha(opacity=25);
     cursor: pointer;
-    .fa-camera {
-      opacity: 1;
-    }
   }
   a{
     color:var(--yellow);

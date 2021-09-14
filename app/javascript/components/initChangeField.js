@@ -3,7 +3,6 @@ const dog_breed = ["Abruzzenhund", "Affenpinscher", "Afghan Hound", "Africanis",
 
 const no_breed = ["pet breed"];
 
-
 function initChangeField() {
   const input_pet_type = document.getElementById("pet_pet_type");
   const input_breed = document.getElementById("pet_breed");

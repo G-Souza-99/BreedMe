@@ -55,7 +55,6 @@
         <% else %>
           <h4><strong>You are this pet's owner</strong></h4>
       <% end %>
-
       <% if @pet.sex == 'female' && @pet.user == current_user %>
         <%= button_tag(type: 'button', class: 'btn-ours') do %>
           <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
@@ -63,7 +62,6 @@
       <% end %>
     </div>
   </div>
-
   <div id="map"
     style="width: 100%; height: 600px;"
     data-markers="<%= @marker.to_json %>"
