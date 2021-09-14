@@ -43,17 +43,12 @@
           </button>
         <% else %>
           <h4><strong>You are this pet's owner</strong></h4>
-      <% end %>
-      <% if @pet.sex == 'female' && @pet.user == current_user %>
-        <%= button_tag(type: 'button', class: 'btn-ours') do %>
-          <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
         <% end %>
         <% if @pet.sex == 'female' && @pet.user == current_user %>
           <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
             <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
           <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
     <div class="col-md-8 left-col ">
