@@ -5,7 +5,7 @@
       class: '' do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <h2>Add A pet</h2>
+      <h2>Add a pet</h2>
       <%= link_to pets_path,
       class: '' do %>
         <i class="fas fa-forward"></i>
@@ -71,6 +71,13 @@
                           label: false,
                           placeholder: 'add a fancy description about your pet'%>
             </div>
+
+            <div class="col-sm">
+              <%= f.input :address,
+                          label: false,
+                          placeholder: 'add your address where'%>
+            </div>
+
             <div id="drag-field" class="col-sm">
               <p class="text-muted align-center">drag and drop images here</p>
               <%= f.input :photo,

@@ -8,8 +8,8 @@ gem 'geocoder'
 # pundit for authorization
 gem 'pundit'
 
-# cloudinary for image upload by user
-gem 'dotenv-rails', groups: [:development, :test]
+gem "nokogiri"
+
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'faker'
