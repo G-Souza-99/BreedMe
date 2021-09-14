@@ -13,3 +13,12 @@
   --pink:#FA6464;
   --pinkbg: #FDC4C4;
 }
+
+::selection {
+  background: #FA6464; /* WebKit/Blink Browsers */
+  color:white;
+}
+::-moz-selection {
+  background: #FA6464; /* Gecko Browsers */
+  color:white;
+}
