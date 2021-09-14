@@ -51,14 +51,24 @@
             <%= cl_image_tag pet.photo.key %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= pet.name %><% if pet.pedigree_number %>
-                  <i class="far fa-check-circle"></i>
-                  <p id="verified_caption">has a pedigree number</p>
-                <% end %></h2>
+                <div class='d-flex'>
+                  <h2 class="mr-2"><%= pet.name %></h2>
+                    <%# check symbol if pedigree %>
+                    <% if pet.pedigree_number %>
+                      <div data-tooltip="has a pedigree number" class="d-flex">
+                        <i class="fas fa-check-circle super_tooltip mr-2"></i>
+                      </div>
+                    <% end %>
+                    <%# flame symbol if female on heat %>
+                    <% if pet.sex == 'female' && pet.on_heat == true %>
+                      <div data-tooltip="female on heat" class="d-flex">
+                        <i class="fas fa-fire-alt super_tooltip"></i>
+                      </div>
+                    <% end %>
+                  </div>
                 <p><%= pet.breed %></p>
               </div>
               <div>
-                <%# <%= if pet.includes? pet.pedigree_number class="verified" %>
                 <h2 class="card-trip-pricing"><%= pet.sex %></h2>
               </div>
             </div>

@@ -26,7 +26,9 @@
       <div class="col right-col-info ">
         <ul class="list-unstyled">
           <li class="pb-3"><i class="fas fa-venus-mars"></i>:         <%= @pet.sex.capitalize %></li>
-          <li class="pb-3"><i class="far fa-calendar-alt"></i>:       <%= @pet.birthday %></li>
+          <% if @pet.birthday %>
+            <li class="pb-3"><i class="far fa-calendar-alt"></i>:       <%= @pet.birthday %></li>
+          <% end %>
           <% if @pet.pedigree_number %>
             <li class="pb-3"><i class="fas fa-list-ol"></i>:       <%= @pet.pedigree_number %></li>
           <% end %>
@@ -40,7 +42,11 @@
             <% end %>
           </button>
         <% else %>
-            <h4><strong>You are this pet's owner</strong></h4>
+          <h4><strong>You are this pet's owner</strong></h4>
+      <% end %>
+      <% if @pet.sex == 'female' && @pet.user == current_user %>
+        <%= button_tag(type: 'button', class: 'btn-ours') do %>
+          <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
         <% end %>
         <% if @pet.sex == 'female' && @pet.user == current_user %>
           <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
@@ -62,5 +68,4 @@
       </div>
     </div>
   </div>
-
 </div>
