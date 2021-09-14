@@ -4,7 +4,7 @@
 <% cat_breed = ['Abyssinian', 'American Bobtail', 'American Curl', 'American Shorthair', 'Angora', 'Balinese', 'Bengal', 'Bombay', 'Brazilian Shorthair', 'Burmese', 'Burmilla', 'California Spangled', 'Ceylon', 'Chartreux', 'Cornish Rex', 'Cymric', 'Devon Rex', 'Egyptian Mau', 'English Shorthair', 'European Shorthair', 'Exotic', 'Foldex', 'German Rex', 'Havana Marrom', 'Himalayan', 'Holy Burma', 'Japanese Bobtail', 'Javanese', 'Korat', 'LaPerm', 'Maine Coon', 'Manx', 'Mist Australiano', 'Munchkin', 'Nebelung', 'Norwegian Forest', 'Ocicat', 'Oriental Shorthair', 'Persian', 'Pixie-Bob', 'Ragdoll', 'Russian Blue', 'Savannah', 'Scottish Fold', 'Selkirk Rex', 'Serengeti', 'Seychellois', 'Siamese', 'Siberian', 'Singapore', 'Skogkatt', 'Snowshoe', 'Sokoke', 'Somali', 'Sphynx', 'Tonkinese', 'Toyger', 'Turkish Van Cat', 'Usuri', 'York Chocolate'] %>
 
 
-<div id="change-switcher" class="">
+<div id="change-switcher" class="show-index-page">
   <div class="container">
 
     <%# current pets looking for  %>
@@ -52,7 +52,7 @@
             <div class="card-trip-infos">
               <div>
                 <div class='d-flex'>
-                  <h2 class="mr-2"><%= pet.name %></h2>
+                  <h2 class="mr-2"><%= pet.name.capitalize %></h2>
                     <%# check symbol if pedigree %>
                     <% if pet.pedigree_number %>
                       <div data-tooltip="has a pedigree number" class="d-flex">
@@ -66,10 +66,10 @@
                       </div>
                     <% end %>
                   </div>
-                <p><%= pet.breed %></p>
+                <p><%= pet.breed.capitalize %></p>
               </div>
               <div>
-                <h2 class="card-trip-pricing"><%= pet.sex %></h2>
+                <h2 class="card-trip-pricing"><%= pet.sex.capitalize %></h2>
               </div>
             </div>
           </div>

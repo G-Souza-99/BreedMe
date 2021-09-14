@@ -1,0 +1,9 @@
+.show-index-page{
+  a{
+  color: var(--black);
+  text-decoration: none;
+  &:hover{
+    color: var(--yellow);
+  }
+ }
+}

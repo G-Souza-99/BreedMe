@@ -20,11 +20,11 @@
       <% end %>
     </div>
   </div>
-  <div class="row">
+  <div class="row text-center">
     <div class="avatar-dog right-col col-md-4">
       <%= cl_image_tag @pet.photo.key %>
       <div class="col right-col-info ">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled text-left ml-3">
           <li class="pb-3"><i class="fas fa-venus-mars"></i>:         <%= @pet.sex.capitalize %></li>
           <% if @pet.birthday %>
             <li class="pb-3"><i class="far fa-calendar-alt"></i>:       <%= @pet.birthday %></li>
@@ -53,6 +53,7 @@
             <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
           <% end %>
         <% end %>
+      <% end %>
       </div>
     </div>
     <div class="col-md-8 left-col ">
