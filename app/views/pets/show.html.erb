@@ -35,7 +35,9 @@
       <div class="col margin-list">
         <ul class="list-unstyled">
           <li class="pb-4">Sex: <%= @pet.sex %></li>
-          <li class="pb-4">Birthday: <%= @pet.birthday %></li>
+          <% if @pet.birthday %>
+            <li class="pb-4">Birthday: <%= @pet.birthday %></li>
+          <% end %>
           <% if @pet.pedigree_number %>
             <li class="pb-4">Pedigree Number: <%= @pet.pedigree_number %></li>
           <% end %>
