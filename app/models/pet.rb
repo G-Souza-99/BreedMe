@@ -15,5 +15,6 @@ class Pet < ApplicationRecord
     else
       self.on_heat = false
     end
+    self.save
   end
 end
