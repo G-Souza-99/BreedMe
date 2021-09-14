@@ -2,8 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[show edit update destroy]
 
   def index
-    @pets = Pet.all
-    @pets = policy_scope(Pet).order(created_at: :desc)
+    @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
     session[:last_page] = 'pets_index'
   end
 
@@ -72,6 +71,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat, :photo)
+    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat, :photo, :address)
   end
 end
