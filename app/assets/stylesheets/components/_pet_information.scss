@@ -1,20 +1,22 @@
-h1 {
-  font-weight: bold;
-}
-.align-text-h1{
-  padding-top: 10px;
-}
-.class-bg-color {
-  background: var(--yellowbg);
-}
-.margin-description {
-  margin-left: 60px;
-  margin-right: 60px;
-}
-.margin-list {
-  margin-top: 60px;
-}
+.petinfo{
+  h1 {
+    font-weight: bold;
+  }
+  .align-text-h1{
+    padding-top: 10px;
+  }
+  .class-bg-color {
+    background: var(--yellowbg);
+  }
+  .margin-description {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  .margin-list {
+    margin-top: 60px;
+  }
 
-h4{
-  color:var(--pink)
+  h4{
+    color:var(--pink)
+  }
 }
