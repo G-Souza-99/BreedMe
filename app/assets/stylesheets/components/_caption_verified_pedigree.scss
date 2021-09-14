@@ -1,0 +1,11 @@
+.fa-check-circle {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+#verified_caption {
+    display: none;
+}
+.verified_icon:hover #verified_caption {
+    display:block;
+}
