@@ -11,6 +11,7 @@
     <h1 style="font-size: 3.4em;font-weight: bold;"class="text-center mt-5">Matches at your fingertips</h1>
     <h3 class="text-center mt-4 mb-3">Let's breed the perfect pet!</h3>
 
+    <%# -------------------Search bar--------------------------- %>
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-dog">
       <%= select_tag "pet_breed",
        options_for_select(dog_breed),
@@ -19,6 +20,7 @@
       placeholder: "search for a breed!",
       scrollAfterSelect: true,
       id: "change-dog"} %>
+      <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
     </div>
 
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-cat">
@@ -29,8 +31,23 @@
       placeholder: "search for a breed!",
       scrollAfterSelect: true,
       id: "change-cat" } %>
+      <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
+    </div>
+    <% if !params[:pet1].nil?  %>
+      <%  params.each do |key, value|  %>
+      <% if key.include?("pet") %>
+        <p><%= value %></p>
+      <% end %>
+      <% end %>
+    <% end %>
+
+    <div>
+      <%= link_to pets_path(pet:""), id:"btn-to-hide", class:"" do %>
+        btn
+      <% end %>
     </div>
 
+    <%# ----------------------------------------------------------- %>
 
 
     <%# Website switcheroooo switch thing %>

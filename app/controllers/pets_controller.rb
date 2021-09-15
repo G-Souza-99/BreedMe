@@ -2,8 +2,19 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[show edit update destroy]
 
   def index
-    @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
     session[:last_page] = 'pets_index'
+
+    if !params[:pet1].nil?
+      @pets = []
+      params.each do |key, value|
+        if key.include?("pet")
+          @pets <<  policy_scope(Pet).where(breed: value)
+        end
+      end
+      @pets.flatten!
+    else
+      @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
+    end
   end
 
   def show
