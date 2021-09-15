@@ -36,8 +36,8 @@ last_names = %w[Mayweather Smith Taylor Evens Wilson Brown Jones Williams Floyd 
     email: Faker::Internet.email,
     password: '123456'
   )
-  user_female.avatar.attach(
-    io: File.open(Rails.root.join("app/assets/images/avatars/(FALTA IMAGEM AQUI).jpg")),
+  user_female.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/female#{rand(1..5)}.jpg")),
     filename: 'female'
   )
 end
@@ -49,8 +49,8 @@ end
     email: Faker::Internet.email,
     password: '123456'
   )
-  user_male.avatar.attach(
-    io: File.open(Rails.root.join("app/assets/images/avatars/(FALTA IMAGEM AQUI).jpg")),
+  user_male.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/male#{rand(1..5)}.jpg")),
     filename: 'male'
   )
 end
