@@ -20,7 +20,11 @@
                 <%= chat_avatar(chat, current_user) %>
               </div>
               <div class="card-product-infos">
-                <h2><%= "#{chat.owner.first_name} #{chat.owner.last_name}" %></h2>
+                <% if chat.owner != current_user %>
+                  <h2><%= "#{chat.owner.first_name} #{chat.owner.last_name}" %></h2>
+                <% else %>
+                  <h2><%= "#{chat.user.first_name} #{chat.user.last_name}" %></h2>
+                <% end %>
                 <p><%= chat.updated_at.to_date %></p>
               </div>
             </div>

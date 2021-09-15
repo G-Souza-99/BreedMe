@@ -9,7 +9,7 @@ puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
 catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
 catia.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/catia.png")),
+  io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
   filename: 'catia'
 )
 gabriel = User.create(email: 'gabriel@breedme.com', password: '123456', first_name: 'Gabriel', last_name: 'Souza')
@@ -19,7 +19,7 @@ gabriel.photo.attach(
 )
 ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
 ines.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
+  io: File.open(Rails.root.join("app/assets/images/catia.png")),
   filename: 'ines'
 )
 
@@ -80,7 +80,7 @@ pet2 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Pucci",
-  sex: "Male",
+  sex: "male",
   description: "Pucci, doesn't like to expose himself. Taking pictures is not his thing!
   But it's a really fun and smart kitten. He loves to eat fresh hake and take a nap after meals",
   birthday: Faker::Date.birthday,
@@ -97,7 +97,7 @@ pet3 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gucci",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Gucci, is vain and likes a lot of pampering.
   It has sea eyes that delight any cat. Its fur is silky and shiny.
@@ -117,7 +117,7 @@ pet4 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Sebastian",
-  sex: "Male",
+  sex: "male",
   description: "A natural seducer, Sebastian loves to give kisses, massage her stomach and share food.
   Is very detailed and likes to give pleasure to his partner.",
   birthday: Faker::Date.birthday,
@@ -134,7 +134,7 @@ pet5 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Top Choc",
-  sex: "Male",
+  sex: "male",
   description: "A fantastic kitten. Don't be intimidated by being black, it's not unlucky!
   Top Chocis is calm and likes classical music.",
   birthday: Faker::Date.birthday,
@@ -151,7 +151,7 @@ pet6 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Celine",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Her eyes are sweet as honey. A fluffy and irresistible fur.
   She is a very sweet and friendly kitten. She likes to be accompanied and play with balls.",
@@ -170,7 +170,7 @@ pet7 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gina",
-  sex: "Female",
+  sex: "female",
   description: "Gina, is a sassy cat. Sweet from birth, she likes to be spoiled with small delicacies.
   She's addicted to beds.",
   on_heat: true,
@@ -188,7 +188,7 @@ pet8 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Champagne",
-  sex: "Male",
+  sex: "male",
   description: "Don't be fooled by his grumpy air. is a gentleman, able to provide moments of great fun.
   He loves having company and being in the garden by the pool on sunny days.",
   birthday: Faker::Date.birthday,
@@ -205,7 +205,7 @@ pet9 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ruca",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "He prefers to sleep in the morning and enjoy the unknown at night.
   He likes adventures and meeting all kinds of kittens. is nice and is looking forward to meeting you!",
@@ -223,7 +223,7 @@ pet10 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Purrfection",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "Take one look at my eyes and tell me you don't see purrfection.
   My rising sign is Leo. I'm a hurricane of seduction, I'll make you purr all night.",
@@ -241,7 +241,7 @@ pet11 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ava",
-  sex: "Female",
+  sex: "female",
   description: "I love spending my days in the sun, belly up.
   I was born to be served and live in refinement. I like green-eyed blondes.",
   on_heat: false,
@@ -259,7 +259,7 @@ pet12 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Lala",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Hi my name is Lala, I am very careful with my nails, I spend the day sharpening them on my sofa.
   I like being at home and having routines. If you want a queen you have to earn it,
@@ -279,7 +279,7 @@ pet13 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Nívea",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "I'm a homely cat. My favorite season of the year is winter. I love watching the snow.
   I'm often mistaken for Purina's Gourmet food advertising cat.
@@ -299,7 +299,7 @@ pet14 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Kiki",
-  sex: "Female",
+  sex: "female",
   description: "My eyes are blue like the sky.
   I am elegant and delicate. I like teaching and I dream a lot about being a mother.
   I was the inspiration for Drake's song.",
@@ -318,7 +318,7 @@ pet15 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Grace",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "All fall to my Grace. I'm too sleepy. I wake up full of energy and a huge smile.
   I like to be accompanied and to invent new games. I am very excited to be joining Breed Me.",
@@ -337,7 +337,7 @@ pet16 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Ice",
-  sex: "Male",
+  sex: "male",
   description: "I'm addicted to fashion. it's very important for me to be well dressed.
   I like to be noticed, I have charisma.",
   birthday: Faker::Date.birthday,
@@ -354,7 +354,7 @@ pet17 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Jimmy",
-  sex: "Male",
+  sex: "male",
   description: "Hi, my name is Jimmy. I'm known for the color of my tongue being dark.
   When I eat, I have difficulty feeling satisfied, I always want more.
   Therefore, I force myself to exercise regularly to be in shape.",
@@ -372,7 +372,7 @@ pet18 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Igor",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "I don't know where I'm going from here but I promise it won't be boring.
   I find myself adventurous and always available to help.
@@ -391,7 +391,7 @@ pet19 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Pongo",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "With me it´s black and white. There is no middle ground. I try to make new friends.
   Who knows, find a love for life. I am sociable, intelligent but a little anxious.",
@@ -409,7 +409,7 @@ pet20 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Bold",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "Bold, is known for his genuineness and directness. Enjoy outdoor activities and rules.
   He is hopeful of finding a partner to make a family.",
@@ -427,7 +427,7 @@ pet21 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Kira",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Hi my dears, my name is Kira.
   I am a high competition athlete, I have won several medals all over the world.
@@ -447,7 +447,7 @@ pet22 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Brutos",
-  sex: "Male",
+  sex: "male",
   description: "I work as a Police. But don't think my name is Max. My best quality is my scent. I help close a lot
   of cases. For me it is important to contribute to the development of a fairer and safer society.",
   birthday: Faker::Date.birthday,
@@ -464,7 +464,7 @@ pet23 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Joy",
-  sex: "Female",
+  sex: "female",
   description: "Joy, are addicted to picking up sticks. It's very competitive.
   Every morning she practice run because she like to feel good physically and mentally.She is fun and sweet.",
   on_heat: false,
@@ -482,7 +482,7 @@ pet24 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nina",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "I was born to steal smiles. I am passionate about life. I like to make new friends and go on adventures.
   I am protective of nature and playful. Breed Me has brought me better opportunities to find a perfect match for me.",
@@ -501,7 +501,7 @@ pet25 = Pet.create(
   user_id: catia.id,
   pet_type: "Dog",
   name: "Jasmin",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "A country girl who loves to be surrounded by flowers, more specifically sunflower.
   Blue-eyed, Jasmin manages to melt hearts with her sweet air. it's quiet and homey.",
@@ -520,7 +520,7 @@ pet26 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nala",
-  sex: "Female",
+  sex: "female",
   description: "Funny fact, I always fall asleep with a pink pig
   I'm interested in emotional intelligence and everything related to the mind.
   I play sports regularly and love taking naps throughout the day.",
@@ -539,7 +539,7 @@ pet27 = Pet.create(
   user_id: gabriel.id,
   pet_type: "Dog",
   name: "King",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "I joined Breed Me because I want to find my dream match. I want to live a romance and create a legacy.
   I consider myself optimistic and romantic.",
@@ -557,7 +557,7 @@ pet28 = Pet.create(
   user_id: ines.id,
   pet_type: "Dog",
   name: "Kayla",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Kayla is a hurricane. It has an eye of every color, which makes it unforgettable whoever stumbles upon it.
   Is naughty to play. When it snows, she can spend hours jumping between layers of snow.",
@@ -576,7 +576,7 @@ pet29 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Woody",
-  sex: "Male",
+  sex: "male",
   description: "Hello, my name is Woody and I live in the city.
   I like to spend weekends in the countryside where I can be closer to nature.
   I consider myself affectionate, detailed, happy and faithful.",
