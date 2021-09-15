@@ -418,7 +418,7 @@ pet21 = Pet.create(
   address: "Rua de Linhares, Matosinhos"
 )
 pet21.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dogs/dog_galgo_español.png")),
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_galgo_espanol.png")),
   filename: 'dog'
 )
 
