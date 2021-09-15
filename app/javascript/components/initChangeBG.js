@@ -11,7 +11,7 @@ const toggleBG = (elm, checked, dog, cat) => {
   } else {
     elm.classList.remove("pinkbg");
     elm.classList.add("yellowbg");
-    
+
     console.log("Checkbox is not checked.. woof!");
     console.log("displaying search with.... dogs");
     cat.classList.remove("d-block");
