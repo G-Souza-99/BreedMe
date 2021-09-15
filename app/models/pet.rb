@@ -5,7 +5,7 @@ class Pet < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  validates :name, :sex, :photo, :breed, :pet_type, presence: true
+  validates :name, :sex, :photo, :breed, :pet_type, :address, presence: true
 
   after_create :set_default
 
