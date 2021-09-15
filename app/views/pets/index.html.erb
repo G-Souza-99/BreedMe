@@ -12,6 +12,7 @@
     <h3 class="text-center mt-4 mb-3">Let's breed the perfect pet!</h3>
 
     <%# -------------------Search bar--------------------------- %>
+    <%#----------------------- dog ------------------------------%>
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-dog">
       <%= select_tag "pet_breed",
        options_for_select(dog_breed),
@@ -22,7 +23,7 @@
       id: "change-dog"} %>
       <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
     </div>
-
+    <%#----------------------- cat ------------------------------%>
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-cat">
       <%= select_tag "pet_breed",
        options_for_select(cat_breed),
@@ -33,19 +34,26 @@
       id: "change-cat" } %>
       <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
     </div>
-    <% if !params[:pet1].nil?  %>
-      <%  params.each do |key, value|  %>
-      <% if key.include?("pet") %>
-        <p><%= value %></p>
-      <% end %>
-      <% end %>
-    <% end %>
+    <%#----------------------- Search Shops ------------------------------ %>
 
-    <div>
-      <%= link_to pets_path(pet:""), id:"btn-to-hide", class:"" do %>
-        btn
-      <% end %>
-    </div>
+    <% if !params[:pet1].nil?  %>
+      <div class="row">
+        <%  params.each do |key, value|  %>
+            <% if key.include?("pet") %>
+              <div class="d-flex" style="">
+                <div class="search-outputs d-flex">
+                  <p><%= value %></p>
+                  <i class="far fa-times-circle p-1" style="cursor: pointer;"></i>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <%# hidden btn that acts as our submit form %>
+    <%= link_to pets_path(pet:""), id:"btn-to-hide", class:"d-none" do %>
+       btn
+    <% end %>
 
     <%# ----------------------------------------------------------- %>
 
