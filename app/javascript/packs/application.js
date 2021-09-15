@@ -32,6 +32,7 @@ import { initChangeField } from "../components/initChangeField";
 import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initLandingPage } from '../components/initLandingPage';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,4 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   initDragAndDrop();
   initSelect2();
   initMapbox();
+  initLandingPage();
 });
