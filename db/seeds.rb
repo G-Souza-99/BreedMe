@@ -1,11 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-puts '***** Destroying Seeds *****'
+puts '***** Destroying Seeds 💣 *****'
 User.destroy_all
 Pet.destroy_all
 
-puts '***** Creating Cátia, Gabriel & Inês *****'
+puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
 catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
 catia.photo.attach(
@@ -23,7 +23,7 @@ ines.photo.attach(
   filename: 'ines'
 )
 
-puts '***** Creating 10 Users *****'
+puts '***** Creating 10 Users 👨🏽👩🏼‍💼 *****'
 
 female_names = %w[Kate Sarah Maggie Susan Crista]
 male_names = %w[Francis Peter Michael John Carlos]
@@ -37,7 +37,7 @@ last_names = %w[Mayweather Smith Taylor Evens Wilson Brown Jones Williams Floyd 
     password: '123456'
   )
   user_female.photo.attach(
-    io: File.open(Rails.root.join("app/assets/images/avatars/female#{rand(1..5)}.jpg")),
+    io: File.open(Rails.root.join("app/assets/images/avatars/female#{rand(1..5)}.png")),
     filename: 'female'
   )
 end
@@ -50,15 +50,15 @@ end
     password: '123456'
   )
   user_male.photo.attach(
-    io: File.open(Rails.root.join("app/assets/images/avatars/male#{rand(1..5)}.jpg")),
+    io: File.open(Rails.root.join("app/assets/images/avatars/male#{rand(1..5)}.png")),
     filename: 'male'
   )
 end
 
-puts '***** 🐱‍👤Creating 29 pets *****'
+puts '***** Creating 29 pets 🐱🐶 *****'
 
 pet1 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Pearl",
   sex: "female",
@@ -74,9 +74,10 @@ pet1.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_angora.png")),
   filename: 'cat'
 )
+pet1.save
 
 pet2 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Pucci",
   sex: "Male",
@@ -90,9 +91,10 @@ pet2.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_abyssinian.png")),
   filename: 'cat'
 )
+pet2.save
 
 pet3 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gucci",
   sex: "Female",
@@ -109,9 +111,10 @@ pet3.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_american_bobtail.png")),
   filename: 'cat'
 )
+pet3.save
 
 pet4 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Sebastian",
   sex: "Male",
@@ -125,9 +128,10 @@ pet4.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_bengal.png")),
   filename: 'cat'
 )
+pet4.save
 
 pet5 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Top Choc",
   sex: "Male",
@@ -141,9 +145,10 @@ pet5.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_bombay.png")),
   filename: 'cat'
 )
+pet5.save
 
 pet6 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Celine",
   sex: "Female",
@@ -159,9 +164,10 @@ pet6.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_chartreux.png")),
   filename: 'cat'
 )
+pet6.save
 
 pet7 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gina",
   sex: "Female",
@@ -176,9 +182,10 @@ pet7.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_european_shorthair.png")),
   filename: 'cat'
 )
+pet7.save
 
 pet8 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Champagne",
   sex: "Male",
@@ -192,9 +199,10 @@ pet8.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_exotic.png")),
   filename: 'cat'
 )
+pet8.save
 
 pet9 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ruca",
   sex: "Male",
@@ -209,9 +217,10 @@ pet9.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_korat.png")),
   filename: 'cat'
 )
+pet9.save
 
 pet10 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Purrfection",
   sex: "Male",
@@ -226,9 +235,10 @@ pet10.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_maine_coon.png")),
   filename: 'cat'
 )
+pet10.save
 
 pet11 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ava",
   sex: "Female",
@@ -243,9 +253,10 @@ pet11.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_manx.png")),
   filename: 'cat'
 )
+pet11.save
 
 pet12 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Lala",
   sex: "Female",
@@ -262,9 +273,10 @@ pet12.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_munchkin.png")),
   filename: 'cat'
 )
+pet12.save
 
 pet13 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Nívea",
   sex: "Female",
@@ -281,9 +293,10 @@ pet13.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_persian.png")),
   filename: 'cat'
 )
+pet13.save
 
 pet14 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Kiki",
   sex: "Female",
@@ -299,9 +312,10 @@ pet14.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/cats/cat_siamese.png")),
   filename: 'cat'
 )
+pet14.save
 
 pet15 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Grace",
   sex: "Female",
@@ -317,9 +331,10 @@ pet15.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_beagle.png")),
   filename: 'dog'
 )
+pet15.save
 
 pet16 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Ice",
   sex: "Male",
@@ -333,9 +348,10 @@ pet16.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_chihuahua.png")),
   filename: 'dog'
 )
+pet16.save
 
 pet17 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Jimmy",
   sex: "Male",
@@ -350,9 +366,10 @@ pet17.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_chow_chow.png")),
   filename: 'dog'
 )
+pet17.save
 
 pet18 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Igor",
   sex: "Male",
@@ -368,9 +385,10 @@ pet18.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_dachshund.png")),
   filename: 'dog'
 )
+pet18.save
 
 pet19 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Pongo",
   sex: "Male",
@@ -385,9 +403,10 @@ pet19.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_dalmatian.png")),
   filename: 'dog'
 )
+pet19.save
 
 pet20 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Bold",
   sex: "Male",
@@ -402,9 +421,10 @@ pet20.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_french_bulldog.png")),
   filename: 'dog'
 )
+pet20.save
 
 pet21 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Kira",
   sex: "Female",
@@ -421,9 +441,10 @@ pet21.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_galgo_espanol.png")),
   filename: 'dog'
 )
+pet21.save
 
 pet22 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Brutos",
   sex: "Male",
@@ -437,9 +458,10 @@ pet22.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_german_shepherd.png")),
   filename: 'dog'
 )
+pet22.save
 
 pet23 = Pet.create(
-  user_id: user_female.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Joy",
   sex: "Female",
@@ -454,9 +476,10 @@ pet23.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_jack_russell.png")),
   filename: 'dog'
 )
+pet23.save
 
 pet24 = Pet.create(
-  user_id: user_male.sample.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nina",
   sex: "Female",
@@ -472,6 +495,7 @@ pet24.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_labrador_retriever.png")),
   filename: 'dog'
 )
+pet24.save
 
 pet25 = Pet.create(
   user_id: catia.id,
@@ -490,9 +514,10 @@ pet25.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_landseer.png")),
   filename: 'dog'
 )
+pet25.save
 
 pet26 = Pet.create(
-  user_id: catia.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nala",
   sex: "Female",
@@ -508,6 +533,7 @@ pet26.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_pit_bull_terrier.png")),
   filename: 'dog'
 )
+pet26.save
 
 pet27 = Pet.create(
   user_id: gabriel.id,
@@ -525,6 +551,7 @@ pet27.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_pug.png")),
   filename: 'dog'
 )
+pet27.save
 
 pet28 = Pet.create(
   user_id: ines.id,
@@ -543,9 +570,10 @@ pet28.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_siberian_husky.png")),
   filename: 'dog'
 )
+pet28.save
 
 pet29 = Pet.create(
-  user_id: gabriel.id,
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Woody",
   sex: "Male",
@@ -560,5 +588,6 @@ pet29.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_welsh_corgi_pembroke.png")),
   filename: 'dog'
 )
+pet29.save
 
-puts '****** 🐱🐶 Finished 🎉 ******'
+puts '****** Finished 🎉 ******'
