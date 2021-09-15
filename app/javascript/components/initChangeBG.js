@@ -8,6 +8,9 @@ const toggleBG = (elm, checked, dog, cat) => {
     dog.classList.remove("d-block");
     dog.classList.add("d-none");
     cat.classList.add("d-block");
+    // const cat_btn = document.querySelector(".change-cat");
+    // cat_btn.click();
+
   } else {
     elm.classList.remove("pinkbg");
     elm.classList.add("yellowbg");
@@ -17,9 +20,14 @@ const toggleBG = (elm, checked, dog, cat) => {
     cat.classList.remove("d-block");
     cat.classList.add("d-none");
     dog.classList.add("d-block");
+    // const dog_btn = document.querySelector(".change-dog");
+    // dog_btn.click();
   }
-};
 
+  console.log("request para corrre controller");
+
+
+};
 
 const initBGCheckbox = () => {
    const elm = document.getElementById("change-switcher");

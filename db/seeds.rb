@@ -9,7 +9,7 @@ puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
 catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
 catia.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
+  io: File.open(Rails.root.join("app/assets/images/catia.png")),
   filename: 'catia'
 )
 gabriel = User.create(email: 'gabriel@breedme.com', password: '123456', first_name: 'Gabriel', last_name: 'Souza')
@@ -19,7 +19,7 @@ gabriel.photo.attach(
 )
 ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
 ines.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/catia.png")),
+  io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
   filename: 'ines'
 )
 

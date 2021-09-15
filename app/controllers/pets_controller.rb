@@ -3,7 +3,6 @@ class PetsController < ApplicationController
 
   def index
     session[:last_page] = 'pets_index'
-
     if !params[:pet1].nil?
       @pets = []
       params.each do |key, value|
@@ -15,6 +14,11 @@ class PetsController < ApplicationController
     else
       @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
     end
+      if !params[:pet_type].nil?
+      @pets = @pets.select { |pet| pet.pet_type == params[:pet_type]}
+      else
+       @pets = @pets.select { |pet| pet.pet_type == "Dog"}
+      end
   end
 
   def show

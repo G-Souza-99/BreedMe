@@ -59,6 +59,8 @@
 
 
     <%# Website switcheroooo switch thing %>
+    <%= link_to "change cat", pets_path(pet_type: "Cat"), class: "change-cat" %>
+    <%= link_to "change dog", pets_path(pet_type: "Dog"), class: "change-dog" %>
     <div class="switcheroo offset-md-11 offset-sm-8">
       <h2>Dog / Cat</h2>
       <label class="switch">
