@@ -43,14 +43,14 @@
     <%#----------------------- Search Shops ------------------------------ %>
 
     <% if !params[:pet1].nil?  %>
-      <div class="row">
+      <div class="row" id="search-results-select2">
         <%  params.each do |key, value|  %>
             <% if key.include?("pet") %>
               <div class="d-flex" style="">
                 <% if value != "cat" && value != "dog" %>
-                  <div class="search-outputs d-flex">
+                  <div class="search-outputs pet-search-id d-flex" id="<%= key.slice(3).to_i - 1  %>">
                     <p><%= value %></p>
-                    <i class="far fa-times-circle p-1" style="cursor: pointer;"></i>
+                    <%# <i class="far fa-times-circle p-1" style="cursor: pointer;"></i> %>
                   </div>
                 <% end %>
               </div>

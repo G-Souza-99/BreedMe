@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initSearchDog } from "../components/initSearchDog";
 import { initSearchCat } from "../components/initSearchCat";
 import { initLandingPage } from '../components/initLandingPage';
+import { initRemovePet } from '../components/initRemovePet';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -52,4 +53,5 @@ document.addEventListener('turbolinks:load', () => {
   initSearchDog();
   initSearchCat();
   //initLandingPage();
+  //initRemovePet();
 });
