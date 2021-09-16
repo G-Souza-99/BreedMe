@@ -189,7 +189,7 @@ pet7.save
 pet8 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "cat",
-  name: "Champagne",
+  name: "Nívea",
   sex: "male",
   description: "Don't be fooled by his grumpy air. is a gentleman, able to provide moments of great fun.
   He loves having company and being in the garden by the pool on sunny days.",
@@ -280,7 +280,7 @@ pet12.save
 pet13 = Pet.create(
   user_id: User.all.sample.id,
   pet_type: "cat",
-  name: "Nívea",
+  name: "Champagne",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "I'm a homely cat. My favorite season of the year is winter. I love watching the snow.

@@ -15,6 +15,16 @@
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs mt-4">
+             <%= f.input :first_name,
+                              required: true,
+                              label: false,
+                              placeholder: "first name" %>
+              <div class="space-class"></div>
+                  <%= f.input :last_name,
+                              required: true,
+                              label: false,
+                              placeholder: "last name" %>
+              <div class="space-class"></div>
               <%= f.input :email,
                           required: true,
                           autofocus: true,
