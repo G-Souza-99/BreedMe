@@ -1,8 +1,8 @@
-const initSearch = () => {
-  const searchIcon = document.querySelector('.fa-search');
+const initSearchDog = () => {
+  const searchIcon = document.querySelector('.search-btn-dog-index');
   let searchArray = []; // Array that will be pushing the info to be searched
   let count = 0;
-  let href =  "?";
+  let href =  "?pet_type=dog&";
   const btnToHide = document.getElementById("btn-to-hide");
   if (searchIcon) {
     searchIcon.addEventListener('click', () => {
@@ -19,4 +19,4 @@ const initSearch = () => {
   }
 }
 
-export { initSearch }
+export { initSearchDog }
