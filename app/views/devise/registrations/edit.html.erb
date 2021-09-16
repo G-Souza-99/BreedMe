@@ -1,6 +1,6 @@
 <div class="container">
   <div class="mt-5">
-    <div class=" mt-5 our-forms text-center justify-content-center " style="border: 4px solid pink">
+    <div class=" mt-5 our-forms text-center justify-content-center">
       <div class="d-flex justify-content-center">
         <%= link_to pets_path,
         class: '' do %>
@@ -10,8 +10,8 @@
         <div class="width-class"></div>
       </div>
       <h1>Edit</h1>
-      <div class="row" style="border: 4px solid black"> <%# Dont remove -- you might think this does nothing but it does everything.%>
-        <div class="offset-md-3 col-md-6  text-center d-flex " style="border: 4px solid blue">
+      <div class="row"> <%# Dont remove -- you might think this does nothing but it does everything.%>
+        <div class="offset-md-3 col-md-6  text-center d-flex">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs mt-4">
@@ -20,14 +20,14 @@
                   <i class="fas fa-camera"></i>
                 </div>
               </div>
-              <div class="form-name row" style="border: 4px solid orange">
-                <div class="col-6" style="border: 4px solid red">
+              <div class="form-name mt-5 row">
+                <div class="col-6">
                   <%= f.input :first_name,
                               required: false,
                               label: false,
                               placeholder: "first name" %>
                 </div>
-                <div class="col-6" style="border: 4px solid red">
+                <div class="col-6">
                   <%= f.input :last_name,
                               required: false,
                               label: false,
