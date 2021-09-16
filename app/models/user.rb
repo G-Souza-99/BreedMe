@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :pets, dependent: :destroy
   has_many :chatrooms, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  validates :first_name, :last_name, presence: true
 end
