@@ -12,17 +12,6 @@
     <h3 class="text-center mt-4 mb-3">Let's breed the perfect pet!</h3>
 
     <%# -------------------Search bar--------------------------- %>
-    <%#----------------------- dog ------------------------------%>
-    <div class="text-center mt-4 mb-3 search-bar" id="change-select-dog">
-      <%= select_tag "pet_breed",
-       options_for_select(dog_breed),
-      { class: 'dog',
-      multiple: true,
-      placeholder: "search for a breed!",
-      scrollAfterSelect: true,
-      id: "change-dog"} %>
-      <button class="fa fa-search"><i class="" style="cursor: pointer;"></i></button>
-    </div>
     <%#----------------------- cat ------------------------------%>
     <% if params[:pet_type] == "cat" %>
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-cat">
@@ -33,7 +22,7 @@
       placeholder: "search for a breed!",
       scrollAfterSelect: true,
       id: "change-cat" } %>
-      <button><i class="fa fa-search search-btn-cat-index" style="cursor: pointer;"></i></button>
+      <button class="btn-search"><i class="fa fa-search search-btn-cat-index" style="cursor: pointer;"></i></button>
     </div>
     <%= link_to "change dog", pets_path(pet_type: "dog"), class: "change-dog" %>
 
@@ -47,7 +36,7 @@
       placeholder: "search for a breed!",
       scrollAfterSelect: true,
       id: "change-dog"} %>
-      <button><i class="fa fa-search search-btn-dog-index" style="cursor: pointer;"></i></button>
+      <button class="btn-search"><i class="fa fa-search search-btn-dog-index" style="cursor: pointer;"></i></button>
     </div>
     <%= link_to "change cat", pets_path(pet_type: "cat"), class: "change-cat" %>
     <% end %>
