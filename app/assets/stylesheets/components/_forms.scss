@@ -3,7 +3,11 @@
     height:0px;
     width:0px;
   }
-
+  .wrapper-form{
+    .form-control{
+      display:inline;
+    }
+  }
   .icons_edit_delete{
     font-size: 0.6em !important;
     align-items: center;
@@ -25,7 +29,7 @@
 
   .form-name{
     input[type=text]{
-    width:40%;
+    width:100%;
     }
   }
 
