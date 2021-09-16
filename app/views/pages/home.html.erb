@@ -23,7 +23,10 @@
         <button class="mt-4"><%= link_to "JOIN BREEDME!", new_user_registration_path, class: "nav-link" %></button>
       </div>
       <div class="col-md-2">
-      <%= image_tag "pet3.png" %>
+        <div class="image-transition">
+        <%= image_tag "pet3.png", class:"landing-foto-dog" %>
+        <%= image_tag "pet_cat.png", class:"landing-foto-cat d-none" %>
+        </div>
       </div>
     </div>
   </div>
