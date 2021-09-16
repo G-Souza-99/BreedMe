@@ -69,7 +69,7 @@ class PetsController < ApplicationController
   end
 
   def favorites
-    @pets = Pet.where(favorite: true)
+    @pets = Pet.where(favorite: true).order(pet_type: :desc, breed: :asc)
     authorize Pet
     session[:last_page] = 'my_pets'
   end
