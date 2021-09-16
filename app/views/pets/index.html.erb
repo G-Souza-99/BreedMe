@@ -24,7 +24,13 @@
       id: "change-cat" } %>
       <button class="btn-search"><i class="fa fa-search search-btn-cat-index" style="cursor: pointer;"></i></button>
     </div>
-    <%= link_to "change dog", pets_path(pet_type: "dog"), class: "change-dog" %>
+
+      <div data-tooltip="Search dogs" class="d-flex">
+        <%= link_to pets_path(pet_type: "dog"),
+        class: "change-cat" do %>
+          <i style="font-size:50px" class="fas fa-dog mb-4"></i>
+        <% end %>
+      </div>
 
     <% else %>
     <%#----------------------- dog ------------------------------%>
@@ -38,7 +44,13 @@
       id: "change-dog"} %>
       <button class="btn-search"><i class="fa fa-search search-btn-dog-index" style="cursor: pointer;"></i></button>
     </div>
-    <%= link_to "change cat", pets_path(pet_type: "cat"), class: "change-cat" %>
+
+      <div data-tooltip="Search cats" class="d-flex">
+        <%= link_to pets_path(pet_type: "cat"),
+        class: "change-cat" do %>
+          <i style="font-size:50px" class="fas fa-cat mb-4"></i>
+        <% end %>
+      </div>
     <% end %>
     <%#----------------------- Search Shops ------------------------------ %>
 

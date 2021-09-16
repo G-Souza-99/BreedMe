@@ -48,24 +48,24 @@
         <%# button heat on/off %>
         <% if @pet.sex == 'female' && @pet.user == current_user %>
           <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
-            <% link_to "heat ON/OFF", change_heat_pet_path(@pet), method: :patch %>
+            <% link_to "Heat", change_heat_pet_path(@pet), method: :patch %>
           <% end %>
         <% end %>
 
         <%# button favorite %>
         <% if @pet.user != current_user %>
           <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
-            <% link_to "favorite", make_favorite_pet_path(@pet), method: :patch %>
+            <% link_to "Favorite", make_favorite_pet_path(@pet), method: :patch %>
           <% end %>
         <% end %>
 
       </div>
     </div>
     <div class="col-md-8 left-col ">
-      <h1><%= @pet.name.capitalize  %><% if @pet.on_heat %> <i class="fas fa-hand-holding-heart"></i><% end %></h1>
+      <h1><%= @pet.name.capitalize  %></h1>
       <h2><%= @pet.breed.capitalize %></h2>
       <div class="text-justify mt-5 mb-5">
-        <p><strong>Description:</strong><%= @pet.description %></p>
+        <p><strong>Description: </strong><%= @pet.description %></p>
       </div>
       <div class="col-md-12" id="map"
         style="width: 100%; height: 300px; border-radius:4px;"
