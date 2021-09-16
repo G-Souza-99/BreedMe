@@ -9,7 +9,7 @@ User.destroy_all
 
 puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
-catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
+catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
 catia.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/catia.png")),
   filename: 'catia'
@@ -19,7 +19,7 @@ gabriel.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/gabriel.jpeg")),
   filename: 'gabriel'
 )
-ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
+ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
 ines.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
   filename: 'ines'

@@ -12,8 +12,14 @@
     <div class=""> <%# dont remove this, it will break app %>
       <div class="row"></div>
       <div class="text-center">
-        <p>Talking with <%= "#{@chatroom.owner.first_name} #{@chatroom.owner.last_name}" %></p>
-        <%= cl_image_tag @chatroom.owner.photo.key, class: "avatar-bigger mb-5"%>
+        <% if @chatroom.owner != current_user %>
+          <p>Talking with <%= "#{@chatroom.owner.first_name} #{@chatroom.owner.last_name}" %></p>
+          <%= cl_image_tag @chatroom.owner.photo.key, class: "avatar-bigger mb-5"%>
+        <% else %>
+          <p>Talking with <%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}" %></p>
+          <%= cl_image_tag @chatroom.user.photo.key, class: "avatar-bigger mb-5"%>
+        <% end %>
+
       </div>
   <div class="chatroom-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
