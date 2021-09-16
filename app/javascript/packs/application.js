@@ -34,6 +34,9 @@ import { initSelect2 } from "../components/initSelect2";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSearchDog } from "../components/initSearchDog";
 import { initSearchCat } from "../components/initSearchCat";
+import { initLandingPage } from '../components/initLandingPage';
+import { initSearch } from "../components/initSearch";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,4 +52,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSearchDog();
   initSearchCat();
+  //initLandingPage();
+  initSearch();
 });
