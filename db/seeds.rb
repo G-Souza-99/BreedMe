@@ -1,19 +1,65 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-
-puts '***** Destroying Seeds *****'
+puts '***** Destroying Seeds 💣 *****'
+Message.destroy_all
 User.destroy_all
 Pet.destroy_all
 
-puts '***** Creating User *****'
+puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
-user = User.create(email: 'test@test.com', password: '123456', first_name: 'First', last_name: 'User')
+catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
+catia.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
+  filename: 'catia'
+)
+gabriel = User.create(email: 'gabriel@breedme.com', password: '123456', first_name: 'Gabriel', last_name: 'Souza')
+gabriel.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/gabriel.jpeg")),
+  filename: 'gabriel'
+)
+ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
+ines.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/catia.png")),
+  filename: 'ines'
+)
 
-puts '***** 🐱‍👤Creating 30 pets *****'
+puts '***** Creating 10 Users 👨🏽👩🏼‍💼 *****'
 
-pet = Pet.new(
-  user_id: user.id,
+female_names = %w[Kate Sarah Maggie Susan Crista]
+male_names = %w[Francis Peter Michael John Carlos]
+last_names = %w[Mayweather Smith Taylor Evens Wilson Brown Jones Williams Floyd Garcia]
+
+5.times do
+  user_female = User.create(
+    first_name: "#{female_names.sample}",
+    last_name: "#{last_names.sample}",
+    email: Faker::Internet.email,
+    password: '123456'
+  )
+  user_female.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/female#{rand(1..5)}.png")),
+    filename: 'female'
+  )
+end
+
+5.times do
+  user_male = User.create(
+    first_name: "#{male_names.sample}",
+    last_name: "#{last_names.sample}",
+    email: Faker::Internet.email,
+    password: '123456'
+  )
+  user_male.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/male#{rand(1..5)}.png")),
+    filename: 'male'
+  )
+end
+
+puts '***** Creating 29 pets 🐱🐶 *****'
+
+pet1 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Pearl",
   sex: "female",
@@ -25,33 +71,34 @@ pet = Pet.new(
   breed: "Angora",
   address: "Avenida da Liberdade, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_angora.png")),
-  filename: 'pet.jpg'
+pet1.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_angora.png")),
+  filename: 'cat'
 )
+pet1.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet2 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Pucci",
-  sex: "Male",
+  sex: "male",
   description: "Pucci, doesn't like to expose himself. Taking pictures is not his thing!
   But it's a really fun and smart kitten. He loves to eat fresh hake and take a nap after meals",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Abyssinian",
   address: "Rua da Junqueira, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_abyssinian.png")),
-  filename: 'pet.jpg'
+pet2.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_abyssinian.png")),
+  filename: 'cat'
 )
+pet2.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet3 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gucci",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Gucci, is vain and likes a lot of pampering.
   It has sea eyes that delight any cat. Its fur is silky and shiny.
@@ -61,52 +108,51 @@ pet = Pet.new(
   breed: "American Bobtail",
   address: "Rua cidade de Rabat, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_american_bobtail.png")),
-  filename: 'pet.jpg'
+pet3.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_american_bobtail.png")),
+  filename: 'cat'
 )
+pet3.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet4 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Sebastian",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "A natural seducer, Sebastian loves to give kisses, massage her stomach and share food.
   Is very detailed and likes to give pleasure to his partner.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Bengal",
   address: "Praça Carlos Alberto, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_bengal.png")),
-  filename: 'pet.jpg'
+pet4.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_bengal.png")),
+  filename: 'cat'
 )
+pet4.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet5 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Top Choc",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "A fantastic kitten. Don't be intimidated by being black, it's not unlucky!
   Top Chocis is calm and likes classical music.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Bombay",
   address: "Rua da Prata, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_bombay.png")),
-  filename: 'pet.jpg'
+pet5.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_bombay.png")),
+  filename: 'cat'
 )
+pet5.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet6 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Celine",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Her eyes are sweet as honey. A fluffy and irresistible fur.
   She is a very sweet and friendly kitten. She likes to be accompanied and play with balls.",
@@ -115,16 +161,17 @@ pet = Pet.new(
   breed: "Chartreux",
   address: "Fontes Pereira de Melo, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_chartreux.png")),
-  filename: 'pet.jpg'
+pet6.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_chartreux.png")),
+  filename: 'cat'
 )
+pet6.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet7 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Gina",
-  sex: "Female",
+  sex: "female",
   description: "Gina, is a sassy cat. Sweet from birth, she likes to be spoiled with small delicacies.
   She's addicted to beds.",
   on_heat: true,
@@ -132,71 +179,70 @@ pet = Pet.new(
   breed: "European Shorthair",
   address: "Praça Marques de Pombal, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_european_shorthair.png")),
-  filename: 'pet.jpg'
+pet7.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_european_shorthair.png")),
+  filename: 'cat'
 )
+pet7.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet8 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Champagne",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "Don't be fooled by his grumpy air. is a gentleman, able to provide moments of great fun.
   He loves having company and being in the garden by the pool on sunny days.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Exotic",
   address: "Rua dos Fanqueiros, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_exotic.png")),
-  filename: 'pet.jpg'
+pet8.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_exotic.png")),
+  filename: 'cat'
 )
+pet8.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet9 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ruca",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "He prefers to sleep in the morning and enjoy the unknown at night.
   He likes adventures and meeting all kinds of kittens. is nice and is looking forward to meeting you!",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Korat",
   address: "Praça da República, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_korat.png")),
-  filename: 'pet.jpg'
+pet9.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_korat.png")),
+  filename: 'cat'
 )
+pet9.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet10 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Purrfection",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "Take one look at my eyes and tell me you don't see purrfection.
   My rising sign is Leo. I'm a hurricane of seduction, I'll make you purr all night.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Maine Coon",
   address: "Rua Miguel Bombarda, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_maine_coon.png")),
-  filename: 'pet.jpg'
+pet10.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_maine_coon.png")),
+  filename: 'cat'
 )
+pet10.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet11 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Ava",
-  sex: "Female",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "female",
   description: "I love spending my days in the sun, belly up.
   I was born to be served and live in refinement. I like green-eyed blondes.",
   on_heat: false,
@@ -204,16 +250,17 @@ pet = Pet.new(
   breed: "Manx",
   address: "Praça D. João I, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_manx.png")),
-  filename: 'pet.jpg'
+pet11.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_manx.png")),
+  filename: 'cat'
 )
+pet11.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet12 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Lala",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Hi my name is Lala, I am very careful with my nails, I spend the day sharpening them on my sofa.
   I like being at home and having routines. If you want a queen you have to earn it,
@@ -223,16 +270,17 @@ pet = Pet.new(
   breed: "Munchkin",
   address: "Rua das Galerias de Paris, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_munchkin.png")),
-  filename: 'pet.jpg'
+pet12.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_munchkin.png")),
+  filename: 'cat'
 )
+pet12.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet13 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Nívea",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "I'm a homely cat. My favorite season of the year is winter. I love watching the snow.
   I'm often mistaken for Purina's Gourmet food advertising cat.
@@ -242,16 +290,17 @@ pet = Pet.new(
   breed: "Persian",
   address: "Rua do Salitre, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_persian.png")),
-  filename: 'pet.jpg'
+pet13.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_persian.png")),
+  filename: 'cat'
 )
+pet13.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet14 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Cat",
   name: "Kiki",
-  sex: "Female",
+  sex: "female",
   description: "My eyes are blue like the sky.
   I am elegant and delicate. I like teaching and I dream a lot about being a mother.
   I was the inspiration for Drake's song.",
@@ -260,16 +309,17 @@ pet = Pet.new(
   breed: "Siamese",
   address: "Rua Júlio César Machado, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/cat_siamese.png")),
-  filename: 'pet.jpg'
+pet14.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/cats/cat_siamese.png")),
+  filename: 'cat'
 )
+pet14.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet15 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Grace",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "All fall to my Grace. I'm too sleepy. I wake up full of energy and a huge smile.
   I like to be accompanied and to invent new games. I am very excited to be joining Breed Me.",
@@ -278,108 +328,107 @@ pet = Pet.new(
   breed: "Beagle",
   address: "Rua Cassiano Branco Bairro dos Loios, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_beagle.png")),
-  filename: 'pet.jpg'
+pet15.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_beagle.png")),
+  filename: 'dog'
 )
+pet15.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet16 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Ice",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "I'm addicted to fashion. it's very important for me to be well dressed.
   I like to be noticed, I have charisma.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Chihuahua",
   address: "Rua Carlos Gentil Bairro do Condado, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_chihuahua.png")),
-  filename: 'pet.jpg'
+pet16.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_chihuahua.png")),
+  filename: 'dog'
 )
+pet16.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet17 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Jimmy",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "Hi, my name is Jimmy. I'm known for the color of my tongue being dark.
   When I eat, I have difficulty feeling satisfied, I always want more.
   Therefore, I force myself to exercise regularly to be in shape.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Chow Chow",
   address: "Rua Capitão-Mor Lopes Sequeira Bairro das Amendoeiras, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_chow_chow.png")),
-  filename: 'pet.jpg'
+pet17.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_chow_chow.png")),
+  filename: 'dog'
 )
+pet17.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet18 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Igor",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "I don't know where I'm going from here but I promise it won't be boring.
   I find myself adventurous and always available to help.
   I like to take care of my physical appearance and my mental health. I am very positive.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Dachshund",
   address: "Praça da Ribeira, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_dachshund.png")),
-  filename: 'pet.jpg'
+pet18.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_dachshund.png")),
+  filename: 'dog'
 )
+pet18.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet19 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Pongo",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "With me it´s black and white. There is no middle ground. I try to make new friends.
   Who knows, find a love for life. I am sociable, intelligent but a little anxious.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Dalmatian",
   address: "Rua Conselheiro Jerónimo Pimentel, Braga"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_dalmatian.png")),
-  filename: 'pet.jpg'
+pet19.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_dalmatian.png")),
+  filename: 'dog'
 )
+pet19.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet20 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Bold",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "Bold, is known for his genuineness and directness. Enjoy outdoor activities and rules.
   He is hopeful of finding a partner to make a family.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "French Bulldog",
   address: "Avenida Engenheiro Pinheiro Braga Gavião, Vila Nova de Famalicão"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_french_bulldog.png")),
-  filename: 'pet.jpg'
+pet20.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_french_bulldog.png")),
+  filename: 'dog'
 )
+pet20.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet21 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Kira",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Hi my dears, my name is Kira.
   I am a high competition athlete, I have won several medals all over the world.
@@ -389,35 +438,34 @@ pet = Pet.new(
   breed: "Galgo Español",
   address: "Rua de Linhares, Matosinhos"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_galgo_español.png")),
-  filename: 'pet.jpg'
+pet21.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_galgo_espanol.png")),
+  filename: 'dog'
 )
+pet21.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet22 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Brutos",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "I work as a Police. But don't think my name is Max. My best quality is my scent. I help close a lot
   of cases. For me it is important to contribute to the development of a fairer and safer society.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "German Shepherd",
   address: "Rua da Oliveira do Carmo, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_german_shepherd.png")),
-  filename: 'pet.jpg'
+pet22.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_german_shepherd.png")),
+  filename: 'dog'
 )
+pet22.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet23 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Joy",
-  sex: "Female",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "female",
   description: "Joy, are addicted to picking up sticks. It's very competitive.
   Every morning she practice run because she like to feel good physically and mentally.She is fun and sweet.",
   on_heat: false,
@@ -425,16 +473,17 @@ pet = Pet.new(
   breed: "Jack Russell",
   address: "Rua Guilherme da Silva, Alhandra"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_jack_russell.png")),
-  filename: 'pet.jpg'
+pet23.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_jack_russell.png")),
+  filename: 'dog'
 )
+pet23.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet24 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nina",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "I was born to steal smiles. I am passionate about life. I like to make new friends and go on adventures.
   I am protective of nature and playful. Breed Me has brought me better opportunities to find a perfect match for me.",
@@ -443,16 +492,17 @@ pet = Pet.new(
   breed: "Labrador Retriever",
   address: "Rua do Boror, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_labrador_retriever.png")),
-  filename: 'pet.jpg'
+pet24.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_labrador_retriever.png")),
+  filename: 'dog'
 )
+pet24.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet25 = Pet.create(
+  user_id: catia.id,
   pet_type: "Dog",
   name: "Jasmin",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "A country girl who loves to be surrounded by flowers, more specifically sunflower.
   Blue-eyed, Jasmin manages to melt hearts with her sweet air. it's quiet and homey.",
@@ -461,17 +511,17 @@ pet = Pet.new(
   breed: "Landseer",
   address: "Rua do Lobito, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_landseer.png")),
-  filename: 'pet.jpg'
+pet25.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_landseer.png")),
+  filename: 'dog'
 )
+pet25.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet26 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Nala",
-  sex: "Female",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "female",
   description: "Funny fact, I always fall asleep with a pink pig
   I'm interested in emotional intelligence and everything related to the mind.
   I play sports regularly and love taking naps throughout the day.",
@@ -480,34 +530,35 @@ pet = Pet.new(
   breed: "Pit Bull Terrier",
   address: "Praça dos Restauradores, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_pit_bull_terrier.png")),
-  filename: 'pet.jpg'
+pet26.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_pit_bull_terrier.png")),
+  filename: 'dog'
 )
+pet26.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet27 = Pet.create(
+  user_id: gabriel.id,
   pet_type: "Dog",
   name: "King",
-  sex: "Male",
+  sex: "male",
   pedigree_number: Faker::IDNumber.valid,
   description: "I joined Breed Me because I want to find my dream match. I want to live a romance and create a legacy.
   I consider myself optimistic and romantic.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Pug",
   address: "Praça da Galiza, Porto"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_pug.png")),
-  filename: 'pet.jpg'
+pet27.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_pug.png")),
+  filename: 'dog'
 )
+pet27.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet28 = Pet.create(
+  user_id: ines.id,
   pet_type: "Dog",
   name: "Kayla",
-  sex: "Female",
+  sex: "female",
   pedigree_number: Faker::IDNumber.valid,
   description: "Kayla is a hurricane. It has an eye of every color, which makes it unforgettable whoever stumbles upon it.
   Is naughty to play. When it snows, she can spend hours jumping between layers of snow.",
@@ -516,29 +567,28 @@ pet = Pet.new(
   breed: "Siberian Husky",
   address: "Rua 1º de Maio, Manteigas"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_siberian_husky.png")),
-  filename: 'pet.jpg'
+pet28.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_siberian_husky.png")),
+  filename: 'dog'
 )
+pet28.save
 
-pet = Pet.new(
-  user_id: user.id,
+pet29 = Pet.create(
+  user_id: User.all.sample.id,
   pet_type: "Dog",
   name: "Woody",
-  sex: "Male",
-  pedigree_number: Faker::IDNumber.valid,
+  sex: "male",
   description: "Hello, my name is Woody and I live in the city.
   I like to spend weekends in the countryside where I can be closer to nature.
   I consider myself affectionate, detailed, happy and faithful.",
-  on_heat: false,
   birthday: Faker::Date.birthday,
   breed: "Welsh Corgi Pembroke",
   address: "Rua do Sacramento, Lisboa"
 )
-pet.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/dog_welsh_corgi_pembroke.png")),
-  filename: 'pet.jpg'
+pet29.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/dogs/dog_welsh_corgi_pembroke.png")),
+  filename: 'dog'
 )
-pet.save!
+pet29.save
 
-puts '****** 🐱‍🏍Finished🎉 ******'
+puts '****** Finished 🎉 ******'

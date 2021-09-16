@@ -33,7 +33,7 @@ import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initLandingPage } from '../components/initLandingPage';
-
+import { initSearch } from "../components/initSearch";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -48,4 +48,5 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   initMapbox();
   initLandingPage();
+  initSearch();
 });
