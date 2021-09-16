@@ -2,9 +2,9 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 puts '***** Destroying Seeds 💣 *****'
+Pet.destroy_all
 Message.destroy_all
 User.destroy_all
-Pet.destroy_all
 
 puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
