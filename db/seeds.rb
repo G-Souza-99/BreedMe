@@ -59,7 +59,7 @@ puts '***** Creating 29 pets 🐱🐶 *****'
 
 pet1 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Pearl",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -78,7 +78,7 @@ pet1.save
 
 pet2 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Pucci",
   sex: "male",
   description: "Pucci, doesn't like to expose himself. Taking pictures is not his thing!
@@ -95,7 +95,7 @@ pet2.save
 
 pet3 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Gucci",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -115,7 +115,7 @@ pet3.save
 
 pet4 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Sebastian",
   sex: "male",
   description: "A natural seducer, Sebastian loves to give kisses, massage her stomach and share food.
@@ -132,7 +132,7 @@ pet4.save
 
 pet5 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Top Choc",
   sex: "male",
   description: "A fantastic kitten. Don't be intimidated by being black, it's not unlucky!
@@ -149,7 +149,7 @@ pet5.save
 
 pet6 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Celine",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -168,7 +168,7 @@ pet6.save
 
 pet7 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Gina",
   sex: "female",
   description: "Gina, is a sassy cat. Sweet from birth, she likes to be spoiled with small delicacies.
@@ -186,7 +186,7 @@ pet7.save
 
 pet8 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Champagne",
   sex: "male",
   description: "Don't be fooled by his grumpy air. is a gentleman, able to provide moments of great fun.
@@ -203,7 +203,7 @@ pet8.save
 
 pet9 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Ruca",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -221,7 +221,7 @@ pet9.save
 
 pet10 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Purrfection",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -239,7 +239,7 @@ pet10.save
 
 pet11 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Ava",
   sex: "female",
   description: "I love spending my days in the sun, belly up.
@@ -257,7 +257,7 @@ pet11.save
 
 pet12 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Lala",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -277,7 +277,7 @@ pet12.save
 
 pet13 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Nívea",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -297,7 +297,7 @@ pet13.save
 
 pet14 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Cat",
+  pet_type: "cat",
   name: "Kiki",
   sex: "female",
   description: "My eyes are blue like the sky.
@@ -316,7 +316,7 @@ pet14.save
 
 pet15 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Grace",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -335,7 +335,7 @@ pet15.save
 
 pet16 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Ice",
   sex: "male",
   description: "I'm addicted to fashion. it's very important for me to be well dressed.
@@ -352,7 +352,7 @@ pet16.save
 
 pet17 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Jimmy",
   sex: "male",
   description: "Hi, my name is Jimmy. I'm known for the color of my tongue being dark.
@@ -370,7 +370,7 @@ pet17.save
 
 pet18 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Igor",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -389,7 +389,7 @@ pet18.save
 
 pet19 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Pongo",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -407,7 +407,7 @@ pet19.save
 
 pet20 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Bold",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -425,7 +425,7 @@ pet20.save
 
 pet21 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Kira",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -445,7 +445,7 @@ pet21.save
 
 pet22 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Brutos",
   sex: "male",
   description: "I work as a Police. But don't think my name is Max. My best quality is my scent. I help close a lot
@@ -462,7 +462,7 @@ pet22.save
 
 pet23 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Joy",
   sex: "female",
   description: "Joy, are addicted to picking up sticks. It's very competitive.
@@ -480,7 +480,7 @@ pet23.save
 
 pet24 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Nina",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -499,7 +499,7 @@ pet24.save
 
 pet25 = Pet.create(
   user_id: catia.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Jasmin",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -518,7 +518,7 @@ pet25.save
 
 pet26 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Nala",
   sex: "female",
   description: "Funny fact, I always fall asleep with a pink pig
@@ -537,7 +537,7 @@ pet26.save
 
 pet27 = Pet.create(
   user_id: gabriel.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "King",
   sex: "male",
   pedigree_number: Faker::IDNumber.valid,
@@ -555,7 +555,7 @@ pet27.save
 
 pet28 = Pet.create(
   user_id: ines.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Kayla",
   sex: "female",
   pedigree_number: Faker::IDNumber.valid,
@@ -574,7 +574,7 @@ pet28.save
 
 pet29 = Pet.create(
   user_id: User.all.sample.id,
-  pet_type: "Dog",
+  pet_type: "dog",
   name: "Woody",
   sex: "male",
   description: "Hello, my name is Woody and I live in the city.

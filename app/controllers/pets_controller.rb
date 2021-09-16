@@ -15,9 +15,9 @@ class PetsController < ApplicationController
       @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
     end
       if !params[:pet_type].nil?
-      @pets = @pets.select { |pet| pet.pet_type == params[:pet_type]}
+      @pets = @pets.select { |pet| pet.pet_type == params[:pet_type] }
       else
-       @pets = @pets.select { |pet| pet.pet_type == "Dog"}
+       @pets = @pets.select { |pet| pet.pet_type == "dog"}
       end
   end
 
