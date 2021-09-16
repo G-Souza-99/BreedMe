@@ -7,7 +7,7 @@ class PetsController < ApplicationController
       @pets = []
       params.each do |key, value|
         if key.include?("pet")
-          @pets <<  policy_scope(Pet).where(breed: value)
+          @pets << policy_scope(Pet).where(breed: value)
         end
       end
       @pets.flatten!
@@ -15,9 +15,9 @@ class PetsController < ApplicationController
       @pets = policy_scope(Pet).order(:on_heat, sex: :desc)
     end
       if !params[:pet_type].nil?
-      @pets = @pets.select { |pet| pet.pet_type == params[:pet_type] }
+        @pets = @pets.select { |pet| pet.pet_type == params[:pet_type] }
       else
-       @pets = @pets.select { |pet| pet.pet_type == "dog"}
+        @pets = @pets.select { |pet| pet.pet_type.downcase == "dog" }
       end
   end
 

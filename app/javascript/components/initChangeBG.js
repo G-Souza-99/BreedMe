@@ -1,31 +1,38 @@
-const toggleBG = (elm, checked, dog, cat) => {
-  if (checked) {
+const toggleBG = (elm, checkbox, dog, cat) => {
+  if (checkbox.checked) {
+    // Codigo parar mudar a cor do background
     elm.classList.remove("yellowbg");
     elm.classList.add("pinkbg");
-    console.log("Checkbox is checked.. meow!");
-    console.log("displaying search with.... cats");
+    console.log("Checkbox is checked - displaying search with.... cats - meow!");
 
+    // Codigo para mostrar o search
     dog.classList.remove("d-block");
     dog.classList.add("d-none");
     cat.classList.add("d-block");
-    // const cat_btn = document.querySelector(".change-cat");
-    // cat_btn.click();
+    // ^--------
 
-  } else {
-    elm.classList.remove("pinkbg");
-    elm.classList.add("yellowbg");
+    //const cat_btn = document.querySelector(".change-cat");
+    //cat_btn.click();
 
-    console.log("Checkbox is not checked.. woof!");
-    console.log("displaying search with.... dogs");
-    cat.classList.remove("d-block");
-    cat.classList.add("d-none");
-    dog.classList.add("d-block");
-    // const dog_btn = document.querySelector(".change-dog");
-    // dog_btn.click();
+  } else if (checkbox.value === "cat") {
+    // Codigo parar mudar a cor do background
+    elm.classList.remove("yellowbg");
+    elm.classList.add("pinkbg");
+    console.log("Checkbox is checked - displaying search with.... cats - meow!");
+
+    // Codigo para mostrar o search
+    dog.classList.remove("d-block");
+    dog.classList.add("d-none");
+    cat.classList.add("d-block");
+    // ^--------
+   const cat_btn = document.querySelector(".change-cat");
+   cat_btn.click();
+
+    //const dog_btn = document.querySelector(".change-dog");
+    //dog_btn.click();
   }
 
-  console.log("request para corrre controller");
-
+  console.log("request para correr controller");
 
 };
 
@@ -36,9 +43,9 @@ const initBGCheckbox = () => {
 
    if (elm) {
     const checkbox = document.querySelector("input");
-    toggleBG(elm, checkbox.checked, dog, cat);
+    toggleBG(elm, checkbox, dog, cat);
 
-    checkbox.addEventListener("change", () => toggleBG(elm, checkbox.checked, dog, cat));
+    checkbox.addEventListener("change", () => toggleBG(elm, checkbox, dog, cat));
   }
 };
 

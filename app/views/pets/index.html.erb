@@ -4,7 +4,7 @@
 <% cat_breed = ['Abyssinian', 'American Bobtail', 'American Curl', 'American Shorthair', 'Angora', 'Balinese', 'Bengal', 'Bombay', 'Brazilian Shorthair', 'Burmese', 'Burmilla', 'California Spangled', 'Ceylon', 'Chartreux', 'Cornish Rex', 'Cymric', 'Devon Rex', 'Egyptian Mau', 'English Shorthair', 'European Shorthair', 'Exotic', 'Foldex', 'German Rex', 'Havana Marrom', 'Himalayan', 'Holy Burma', 'Japanese Bobtail', 'Javanese', 'Korat', 'LaPerm', 'Maine Coon', 'Manx', 'Mist Australiano', 'Munchkin', 'Nebelung', 'Norwegian Forest', 'Ocicat', 'Oriental Shorthair', 'Persian', 'Pixie-Bob', 'Ragdoll', 'Russian Blue', 'Savannah', 'Scottish Fold', 'Selkirk Rex', 'Serengeti', 'Seychellois', 'Siamese', 'Siberian', 'Singapore', 'Skogkatt', 'Snowshoe', 'Sokoke', 'Somali', 'Sphynx', 'Tonkinese', 'Toyger', 'Turkish Van Cat', 'Usuri', 'York Chocolate'] %>
 
 
-<div id="change-switcher" class="show-index-page">
+<div id="change-switcher" class="show-index-page  <%= params[:pet_type] == "cat" ? "pinkbg" : "yellowbg" %>">
   <div class="container">
 
     <%# current pets looking for  %>
@@ -12,6 +12,22 @@
     <h3 class="text-center mt-4 mb-3">Let's breed the perfect pet!</h3>
 
     <%# -------------------Search bar--------------------------- %>
+
+    <%#----------------------- cat ------------------------------%>
+    <% if params[:pet_type] == "cat" %>
+    <div class="text-center mt-4 mb-3 search-bar" id="change-select-cat">
+      <%= select_tag "pet_breed",
+       options_for_select(cat_breed),
+      { class: 'cat',
+      multiple: true,
+      placeholder: "search for a breed!",
+      scrollAfterSelect: true,
+      id: "change-cat" } %>
+      <button><i class="fa fa-search search-btn-cat-index" style="cursor: pointer;"></i></button>
+    </div>
+    <%= link_to "change dog", pets_path(pet_type: "dog"), class: "change-dog" %>
+
+    <% else %>
     <%#----------------------- dog ------------------------------%>
     <div class="text-center mt-4 mb-3 search-bar" id="change-select-dog">
       <%= select_tag "pet_breed",
@@ -21,19 +37,10 @@
       placeholder: "search for a breed!",
       scrollAfterSelect: true,
       id: "change-dog"} %>
-      <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
+      <button><i class="fa fa-search search-btn-dog-index" style="cursor: pointer;"></i></button>
     </div>
-    <%#----------------------- cat ------------------------------%>
-    <div class="text-center mt-4 mb-3 search-bar" id="change-select-cat">
-      <%= select_tag "pet_breed",
-       options_for_select(cat_breed),
-      { class: 'cat',
-      multiple: true,
-      placeholder: "search for a breed!",
-      scrollAfterSelect: true,
-      id: "change-cat" } %>
-      <button><i class="fa fa-search" style="cursor: pointer;"></i></button>
-    </div>
+    <%= link_to "change cat", pets_path(pet_type: "cat"), class: "change-cat" %>
+    <% end %>
     <%#----------------------- Search Shops ------------------------------ %>
 
     <% if !params[:pet1].nil?  %>
@@ -56,19 +63,6 @@
     <% end %>
 
     <%# ----------------------------------------------------------- %>
-
-
-    <%# Website switcheroooo switch thing %>
-    <%= link_to "change cat", pets_path(pet_type: "cat"), class: "change-cat" %>
-    <%= link_to "change dog", pets_path(pet_type: "dog"), class: "change-dog" %>
-    <div class="switcheroo offset-md-11 offset-sm-8">
-      <h2>Dog / Cat</h2>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-
 
     <div class="row">
       <% @pets.reverse.each do |pet| %>

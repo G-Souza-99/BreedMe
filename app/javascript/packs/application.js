@@ -32,13 +32,14 @@ import { initChangeField } from "../components/initChangeField";
 import { initDragAndDrop } from "../components/initDragAndDrop";
 import { initSelect2 } from "../components/initSelect2";
 import { initMapbox } from '../plugins/init_mapbox';
-import { initSearch } from "../components/initSearch";
+import { initSearchDog } from "../components/initSearchDog";
+import { initSearchCat } from "../components/initSearchCat";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   changeClass();
-  initBGCheckbox();
+  // initBGCheckbox();
   initChangeButton();
   initUploadImage();
   initAddPet();
@@ -46,5 +47,6 @@ document.addEventListener('turbolinks:load', () => {
   initDragAndDrop();
   initSelect2();
   initMapbox();
-  initSearch();
+  initSearchDog();
+  initSearchCat();
 });
