@@ -1,6 +1,6 @@
 <div class="container">
   <div class="mt-5">
-    <div class=" mt-5 text-center our-forms justify-content-center ">
+    <div class=" mt-5 our-forms text-center justify-content-center">
       <div class="d-flex justify-content-center">
         <%= link_to pets_path,
         class: '' do %>
@@ -10,8 +10,8 @@
         <div class="width-class"></div>
       </div>
       <h1>Edit</h1>
-      <div class=""> <%# Dont remove -- you might think this does nothing but it does everything.%>
-        <div class="row text-center d-flex justify-content-center">
+      <div class="row"> <%# Dont remove -- you might think this does nothing but it does everything.%>
+        <div class="offset-md-3 col-md-6  text-center d-flex">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs mt-4">
@@ -20,34 +20,48 @@
                   <i class="fas fa-camera"></i>
                 </div>
               </div>
-              <%= f.input :first_name %>
-              <%= f.input :last_name %>
+              <div class="form-name mt-5 row">
+                <div class="col-6">
+                  <%= f.input :first_name,
+                              required: false,
+                              label: false,
+                              placeholder: "first name" %>
+                </div>
+                <div class="col-6">
+                  <%= f.input :last_name,
+                              required: false,
+                              label: false,
+                              placeholder: "last name" %>
+                </div>
+              </div>
               <%= f.input :photo, label: false, as: :file %>
-              <%= f.input :email, required: true, label: false, placeholder: "email", autofocus: true %>
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-              <% end %>
-              <div class="space-class"></div>
-              <%= f.input :password,
-                          hint: "leave it blank if you don't want to change it",
-                          required: false,
-                          label: false,
-                          placeholder: "new password",
-                          input_html: { autocomplete: "new-password" } %>
-              <div class="space-class"></div>
-              <%= f.input :password_confirmation,
-                          required: false,
-                          label: false,
-                          placeholder: "confirm new password",
-                          input_html: { autocomplete: "new-password" } %>
-              <div class="space-class"></div>
-              <%= f.input :current_password,
-                          hint: "old password to confirm change",
-                          required: true,
-                          label: false,
-                          placeholder: "current password",
-                          input_html: { autocomplete: "current-password" } %>
-            </div>
+                <div class="wrapper-form">
+                  <%= f.input :email, required: true, label: false, placeholder: "email", autofocus: false %>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                  <% end %>
+                  <div class="space-class"></div>
+                  <%= f.input :password,
+                              hint: "leave it blank if you don't want to change it",
+                              required: false,
+                              label: false,
+                              placeholder: "new password",
+                              input_html: { autocomplete: "new-password" } %>
+                  <div class="space-class"></div>
+                  <%= f.input :password_confirmation,
+                              required: false,
+                              label: false,
+                              placeholder: "confirm new password",
+                              input_html: { autocomplete: "new-password" } %>
+                  <div class="space-class"></div>
+                  <%= f.input :current_password,
+                              hint: "old password to confirm change",
+                              required: true,
+                              label: false,
+                              placeholder: "current password",
+                              input_html: { autocomplete: "current-password" } %>
+                </div>
+              </div>
             <div class="form-actions mb-5">
               <%= f.button :submit, "Update", class:"btn-ours" %>
             </div>

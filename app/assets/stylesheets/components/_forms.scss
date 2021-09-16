@@ -3,7 +3,11 @@
     height:0px;
     width:0px;
   }
-
+  .wrapper-form{
+    .form-control{
+      display:inline;
+    }
+  }
   .icons_edit_delete{
     font-size: 0.6em !important;
     align-items: center;
@@ -21,6 +25,12 @@
     width: 324px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  }
+
+  .form-name{
+    input[type=text]{
+    width:100%;
+    }
   }
 
   textarea{
