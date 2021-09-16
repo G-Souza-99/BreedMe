@@ -16,9 +16,8 @@
     display: flex;
     align-items: center;
     margin-top: 30px;
-    &:hover{
-      opacity: 0.5;
-      background-color: var(--yellow);
+    &:hover h2, &:hover p{
+      color: var(--yellow);
     }
   }
   .card-product .card-product-infos {
@@ -36,8 +35,9 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
-
+    text-align: left;
   }
+
   .card-product img {
     height: 60px;
     width: 60px;

@@ -9,7 +9,7 @@ User.destroy_all
 
 puts '***** Creating Cátia 💕, Gabriel 🦄 & Inês 🖤 *****'
 
-catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
+catia = User.create(email: 'catia@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
 catia.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/catia.png")),
   filename: 'catia'
@@ -19,7 +19,7 @@ gabriel.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/gabriel.jpeg")),
   filename: 'gabriel'
 )
-ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Cátia', last_name: 'Falagueira')
+ines = User.create(email: 'ines@breedme.com', password: '123456', first_name: 'Inês', last_name: 'Louro')
 ines.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/ineslouro.jpeg")),
   filename: 'ines'
@@ -68,7 +68,7 @@ pet1 = Pet.create(
   description: "Pearl is an affectionate but very shy kitten. She needs time,
   patience and a lot of affection to be conquered. Your blue eyes hypnotize anyone cat.",
   on_heat: true,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Angora",
   address: "Avenida da Liberdade, Lisboa"
 )
@@ -85,7 +85,7 @@ pet2 = Pet.create(
   sex: "male",
   description: "Pucci, doesn't like to expose himself. Taking pictures is not his thing!
   But it's a really fun and smart kitten. He loves to eat fresh hake and take a nap after meals",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Abyssinian",
   address: "Rua da Junqueira, Lisboa"
 )
@@ -105,7 +105,7 @@ pet3 = Pet.create(
   It has sea eyes that delight any cat. Its fur is silky and shiny.
   He loves being at the window to peek at whoever passes by.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "American Bobtail",
   address: "Rua cidade de Rabat, Lisboa"
 )
@@ -122,7 +122,7 @@ pet4 = Pet.create(
   sex: "male",
   description: "A natural seducer, Sebastian loves to give kisses, massage her stomach and share food.
   Is very detailed and likes to give pleasure to his partner.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Bengal",
   address: "Praça Carlos Alberto, Porto"
 )
@@ -139,7 +139,7 @@ pet5 = Pet.create(
   sex: "male",
   description: "A fantastic kitten. Don't be intimidated by being black, it's not unlucky!
   Top Chocis is calm and likes classical music.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Bombay",
   address: "Rua da Prata, Porto"
 )
@@ -158,7 +158,7 @@ pet6 = Pet.create(
   description: "Her eyes are sweet as honey. A fluffy and irresistible fur.
   She is a very sweet and friendly kitten. She likes to be accompanied and play with balls.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Chartreux",
   address: "Fontes Pereira de Melo, Lisboa"
 )
@@ -176,7 +176,7 @@ pet7 = Pet.create(
   description: "Gina, is a sassy cat. Sweet from birth, she likes to be spoiled with small delicacies.
   She's addicted to beds.",
   on_heat: true,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "European Shorthair",
   address: "Praça Marques de Pombal, Porto"
 )
@@ -193,7 +193,7 @@ pet8 = Pet.create(
   sex: "male",
   description: "Don't be fooled by his grumpy air. is a gentleman, able to provide moments of great fun.
   He loves having company and being in the garden by the pool on sunny days.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Exotic",
   address: "Rua dos Fanqueiros, Lisboa"
 )
@@ -211,7 +211,7 @@ pet9 = Pet.create(
   pedigree_number: Faker::IDNumber.valid,
   description: "He prefers to sleep in the morning and enjoy the unknown at night.
   He likes adventures and meeting all kinds of kittens. is nice and is looking forward to meeting you!",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Korat",
   address: "Praça da República, Porto"
 )
@@ -229,7 +229,7 @@ pet10 = Pet.create(
   pedigree_number: Faker::IDNumber.valid,
   description: "Take one look at my eyes and tell me you don't see purrfection.
   My rising sign is Leo. I'm a hurricane of seduction, I'll make you purr all night.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Maine Coon",
   address: "Rua Miguel Bombarda, Lisboa"
 )
@@ -247,7 +247,7 @@ pet11 = Pet.create(
   description: "I love spending my days in the sun, belly up.
   I was born to be served and live in refinement. I like green-eyed blondes.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Manx",
   address: "Praça D. João I, Porto"
 )
@@ -267,7 +267,7 @@ pet12 = Pet.create(
   I like being at home and having routines. If you want a queen you have to earn it,
   but if you want a purr buddy just give me some catnip.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Munchkin",
   address: "Rua das Galerias de Paris, Porto"
 )
@@ -287,7 +287,7 @@ pet13 = Pet.create(
   I'm often mistaken for Purina's Gourmet food advertising cat.
   And by coincidence it's my favorite brand, I can't resist it.",
   on_heat: true,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Persian",
   address: "Rua do Salitre, Lisboa"
 )
@@ -306,7 +306,7 @@ pet14 = Pet.create(
   I am elegant and delicate. I like teaching and I dream a lot about being a mother.
   I was the inspiration for Drake's song.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Siamese",
   address: "Rua Júlio César Machado, Lisboa"
 )
@@ -325,7 +325,7 @@ pet15 = Pet.create(
   description: "All fall to my Grace. I'm too sleepy. I wake up full of energy and a huge smile.
   I like to be accompanied and to invent new games. I am very excited to be joining Breed Me.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Beagle",
   address: "Rua Cassiano Branco Bairro dos Loios, Lisboa"
 )
@@ -342,7 +342,7 @@ pet16 = Pet.create(
   sex: "male",
   description: "I'm addicted to fashion. it's very important for me to be well dressed.
   I like to be noticed, I have charisma.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Chihuahua",
   address: "Rua Carlos Gentil Bairro do Condado, Lisboa"
 )
@@ -360,7 +360,7 @@ pet17 = Pet.create(
   description: "Hi, my name is Jimmy. I'm known for the color of my tongue being dark.
   When I eat, I have difficulty feeling satisfied, I always want more.
   Therefore, I force myself to exercise regularly to be in shape.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Chow Chow",
   address: "Rua Capitão-Mor Lopes Sequeira Bairro das Amendoeiras, Lisboa"
 )
@@ -379,7 +379,7 @@ pet18 = Pet.create(
   description: "I don't know where I'm going from here but I promise it won't be boring.
   I find myself adventurous and always available to help.
   I like to take care of my physical appearance and my mental health. I am very positive.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Dachshund",
   address: "Praça da Ribeira, Porto"
 )
@@ -397,7 +397,7 @@ pet19 = Pet.create(
   pedigree_number: Faker::IDNumber.valid,
   description: "With me it´s black and white. There is no middle ground. I try to make new friends.
   Who knows, find a love for life. I am sociable, intelligent but a little anxious.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Dalmatian",
   address: "Rua Conselheiro Jerónimo Pimentel, Braga"
 )
@@ -415,7 +415,7 @@ pet20 = Pet.create(
   pedigree_number: Faker::IDNumber.valid,
   description: "Bold, is known for his genuineness and directness. Enjoy outdoor activities and rules.
   He is hopeful of finding a partner to make a family.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "French Bulldog",
   address: "Avenida Engenheiro Pinheiro Braga Gavião, Vila Nova de Famalicão"
 )
@@ -435,7 +435,7 @@ pet21 = Pet.create(
   I am a high competition athlete, I have won several medals all over the world.
   When I'm not training, I like to take long walks by the sea. I like the comfort of home and being accompanied.",
   on_heat: true,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Galgo Español",
   address: "Rua de Linhares, Matosinhos"
 )
@@ -452,9 +452,9 @@ pet22 = Pet.create(
   sex: "male",
   description: "I work as a Police. But don't think my name is Max. My best quality is my scent. I help close a lot
   of cases. For me it is important to contribute to the development of a fairer and safer society.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "German Shepherd Dog",
-  address: "Rua da Oliveira do Carmo, Porto"
+  address: "Praça da Alegria, Lisboa"
 )
 pet22.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_german_shepherd.png")),
@@ -470,9 +470,9 @@ pet23 = Pet.create(
   description: "Joy, are addicted to picking up sticks. It's very competitive.
   Every morning she practice run because she like to feel good physically and mentally.She is fun and sweet.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Jack Russell Terrier",
-  address: "Rua Guilherme da Silva, Alhandra"
+  address: "Rua das Pretas, Lisboa"
 )
 pet23.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/dogs/dog_jack_russell.png")),
@@ -489,7 +489,7 @@ pet24 = Pet.create(
   description: "I was born to steal smiles. I am passionate about life. I like to make new friends and go on adventures.
   I am protective of nature and playful. Breed Me has brought me better opportunities to find a perfect match for me.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Labrador Retriever",
   address: "Rua do Boror, Lisboa"
 )
@@ -508,7 +508,7 @@ pet25 = Pet.create(
   description: "A country girl who loves to be surrounded by flowers, more specifically sunflower.
   Blue-eyed, Jasmin manages to melt hearts with her sweet air. it's quiet and homey.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Landseer",
   address: "Rua do Lobito, Lisboa"
 )
@@ -527,7 +527,7 @@ pet26 = Pet.create(
   I'm interested in emotional intelligence and everything related to the mind.
   I play sports regularly and love taking naps throughout the day.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Pit Bull Terrier",
   address: "Praça dos Restauradores, Lisboa"
 )
@@ -545,7 +545,7 @@ pet27 = Pet.create(
   pedigree_number: Faker::IDNumber.valid,
   description: "I joined Breed Me because I want to find my dream match. I want to live a romance and create a legacy.
   I consider myself optimistic and romantic.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Pug",
   address: "Praça da Galiza, Porto"
 )
@@ -564,7 +564,7 @@ pet28 = Pet.create(
   description: "Kayla is a hurricane. It has an eye of every color, which makes it unforgettable whoever stumbles upon it.
   Is naughty to play. When it snows, she can spend hours jumping between layers of snow.",
   on_heat: false,
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Siberian Husky",
   address: "Rua 1º de Maio, Manteigas"
 )
@@ -582,7 +582,7 @@ pet29 = Pet.create(
   description: "Hello, my name is Woody and I live in the city.
   I like to spend weekends in the countryside where I can be closer to nature.
   I consider myself affectionate, detailed, happy and faithful.",
-  birthday: Faker::Date.birthday,
+  birthday:Faker::Date.between(from: '2004-01-01', to: '2020-12-31'),
   breed: "Pembroke Welsh Corgi",
   address: "Rua do Sacramento, Lisboa"
 )
