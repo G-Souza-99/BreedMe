@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@pet.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @pet.description %>
+<% content_for :meta_image, cl_image_path(@pet.photo.path) %>
+
 <div class="container petinfo p-5">
   <div class="our-forms m-2">
     <div class="d-flex">
