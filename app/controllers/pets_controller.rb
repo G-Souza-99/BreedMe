@@ -87,9 +87,9 @@ class PetsController < ApplicationController
   def make_favorite
     set_pet
     if @pet.favorite
-      @pet.favorite(favorite: false)
+      @pet.update(favorite: false)
     else
-      @pet.favorite(favorite: true)
+      @pet.update(favorite: true)
     end
     redirect_to @pet
   end
