@@ -47,10 +47,12 @@
         <%  params.each do |key, value|  %>
             <% if key.include?("pet") %>
               <div class="d-flex" style="">
-                <div class="search-outputs d-flex">
-                  <p><%= value %></p>
-                  <i class="far fa-times-circle p-1" style="cursor: pointer;"></i>
-                </div>
+                <% if value != "cat" && value != "dog" %>
+                  <div class="search-outputs d-flex">
+                    <p><%= value %></p>
+                    <i class="far fa-times-circle p-1" style="cursor: pointer;"></i>
+                  </div>
+                <% end %>
               </div>
             <% end %>
         <% end %>
