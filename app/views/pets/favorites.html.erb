@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="my-pets">
+    <div class=" mt-5 text-center our-forms justify-content-center ">
+      <div class="d-flex justify-content-center">
+      <%= link_to pets_path,
+      class: '' do %>
+        <i class="fas fa-arrow-left mt-3"></i>
+      <% end %>
+    <h1 class="mb-3">Favorites</h1>
+    <div class="width-class"></div>
+    </div>
+    </div>
+    <div class="row">
+      <% @pets.each do |pet| %>
+        <%= link_to pet_path(pet) do %>
+        <div class="co-12 colsm-6 col-md-4 mb-3">
+          <div class="my-pet-card m-1 mt-3">
+            <%= cl_image_tag pet.photo.key%>
+            <div class="my-pet-info">
+              <div class="pet-text">
+                <h2><%= pet.name %></h2>
+                <p><%= pet.breed %></p>
+              </div>
+              <h2 class="my-pet-extrax"><%= pet.sex %></h2>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

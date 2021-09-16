@@ -9,8 +9,16 @@ Rails.application.routes.draw do
       get :my_pets
     end
 
+    collection do
+      get :favorites
+    end
+
     member do
       patch :change_heat
+    end
+
+    member do
+      patch :make_favorite
     end
   end
 

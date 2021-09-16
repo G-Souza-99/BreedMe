@@ -68,12 +68,28 @@ class PetsController < ApplicationController
     session[:last_page] = 'my_pets'
   end
 
+  def favorites
+    @pets = Pet.where(favorite: true).order(pet_type: :desc, breed: :asc)
+    authorize Pet
+    session[:last_page] = 'my_pets'
+  end
+
   def change_heat
     set_pet
     if @pet.on_heat
       @pet.update(on_heat: false)
     else
       @pet.update(on_heat: true)
+    end
+    redirect_to @pet
+  end
+
+  def make_favorite
+    set_pet
+    if @pet.favorite
+      @pet.update(favorite: false)
+    else
+      @pet.update(favorite: true)
     end
     redirect_to @pet
   end
@@ -86,6 +102,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat, :photo, :address)
+    params.require(:pet).permit(:pet_type, :name, :sex, :breed, :birthday, :pedigree_number, :description, :on_heat, :photo, :address, :favorite)
   end
 end

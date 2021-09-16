@@ -25,7 +25,15 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
+  def favorites?
+    true
+  end
+
   def change_heat?
+    true
+  end
+
+  def make_favorite?
     true
   end
 end
