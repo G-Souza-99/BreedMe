@@ -9,15 +9,12 @@
   <div class="width-class"></div>
   </div>
   </div>
-  <div class="profile-img-pet">
     <div class=""> <%# dont remove this, it will break app %>
       <div class="row"></div>
-      <%# adicionar photo do pet %>
-      <div class="row justify-content-center mt-4"><h2></h2></div>
-      <%# adicionar nome do pet %>
-    </div>
-  </div>
-
+      <div class="text-center">
+      <p>Talking with <%= "#{@chatroom.owner.first_name} #{@chatroom.owner.last_name}" %></p>
+      <%= cl_image_tag @chatroom.owner.photo.key, class: "avatar-bigger mb-5"%>
+      </div>
   <div class="chatroom-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <div class="message-container <%= current_user == message.user ? "own" : "" %>" id="message-<%= message.id %>">
