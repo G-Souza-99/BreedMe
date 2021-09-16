@@ -47,6 +47,6 @@ document.addEventListener('turbolinks:load', () => {
   initDragAndDrop();
   initSelect2();
   initMapbox();
-  initLandingPage();
+  // initLandingPage();
   initSearch();
 });

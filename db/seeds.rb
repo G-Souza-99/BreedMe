@@ -452,7 +452,7 @@ pet22 = Pet.create(
   description: "I work as a Police. But don't think my name is Max. My best quality is my scent. I help close a lot
   of cases. For me it is important to contribute to the development of a fairer and safer society.",
   birthday: Faker::Date.birthday,
-  breed: "German Shepherd",
+  breed: "German Shepherd Dog",
   address: "Rua da Oliveira do Carmo, Porto"
 )
 pet22.photo.attach(
@@ -470,7 +470,7 @@ pet23 = Pet.create(
   Every morning she practice run because she like to feel good physically and mentally.She is fun and sweet.",
   on_heat: false,
   birthday: Faker::Date.birthday,
-  breed: "Jack Russell",
+  breed: "Jack Russell Terrier",
   address: "Rua Guilherme da Silva, Alhandra"
 )
 pet23.photo.attach(
@@ -582,7 +582,7 @@ pet29 = Pet.create(
   I like to spend weekends in the countryside where I can be closer to nature.
   I consider myself affectionate, detailed, happy and faithful.",
   birthday: Faker::Date.birthday,
-  breed: "Welsh Corgi Pembroke",
+  breed: "Pembroke Welsh Corgi",
   address: "Rua do Sacramento, Lisboa"
 )
 pet29.photo.attach(
