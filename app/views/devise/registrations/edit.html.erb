@@ -20,6 +20,8 @@
                   <i class="fas fa-camera"></i>
                 </div>
               </div>
+              <%= f.input :first_name %>
+              <%= f.input :last_name %>
               <%= f.input :photo, label: false, as: :file %>
               <%= f.input :email, required: true, label: false, placeholder: "email", autofocus: true %>
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
