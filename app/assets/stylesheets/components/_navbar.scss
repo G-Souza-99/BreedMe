@@ -13,6 +13,6 @@
 
 a.dropdown-item:hover,
 a.dropdown-item:active {
-  color: rgb(255,212,0) !important;
+  color: var(--yellow) !important;
   background-color:  white;
 }
