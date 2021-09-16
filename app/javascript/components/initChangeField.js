@@ -4,12 +4,13 @@ const dog_breed = ["Abruzzenhund", "Affenpinscher", "Afghan Hound", "Africanis",
 const no_breed = ["pet breed"];
 
 function initChangeField() {
+
   const input_pet_type = document.getElementById("pet_pet_type");
   const input_breed = document.getElementById("pet_breed");
 
   const doFunctionThing = (breed) => {
     const element = document.createElement("option");
-    element.value = "breed";
+    element.value = breed;
     element.text = breed;
     input_breed.insertAdjacentElement("afterbegin", element);
 
@@ -17,6 +18,7 @@ function initChangeField() {
 
   if (input_pet_type) {
     input_pet_type.addEventListener("change", () => {
+      console.log("estou a ser usado!")
       if (document.getElementById("pet_pet_type").value === "dog") {
         input_breed.innerHTML = "";
         dog_breed.forEach((breed) => {

@@ -3,6 +3,7 @@
 
 puts '***** Destroying Seeds 💣 *****'
 Pet.destroy_all
+Chatroom.destroy_all
 Message.destroy_all
 User.destroy_all
 
