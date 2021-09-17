@@ -32,7 +32,20 @@
             <%= cl_image_tag pet.photo.key%>
             <div class="my-pet-info">
               <div class="pet-text">
-                <h2><%= pet.name %></h2>
+                <div class='d-flex'>
+                  <h2 class="mr-2"><%= pet.name %></h2>
+                    <% if pet.pedigree_number %>
+                      <div data-tooltip="has a pedigree number" class="d-flex">
+                        <i class="fas fa-check-circle super_tooltip mr-2"></i>
+                      </div>
+                    <% end %>
+                    <%# flame symbol if female on heat %>
+                    <% if pet.sex == 'female' && pet.on_heat == true %>
+                      <div data-tooltip="female on heat" class="d-flex">
+                        <i class="fas fa-fire-alt super_tooltip"></i>
+                      </div>
+                    <% end %>
+                </div>
                 <p><%= pet.breed %></p>
               </div>
               <h2 class="my-pet-extrax"><%= pet.sex %></h2>

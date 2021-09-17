@@ -51,16 +51,14 @@
 
         <%# button heat on/off %>
         <% if @pet.sex == 'female' && @pet.user == current_user %>
-          <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
-            <% link_to "Heat", change_heat_pet_path(@pet), method: :patch %>
-          <% end %>
+        <% @pet.on_heat ? text = "Turn Off Heat" : text = "Turn On Heat"  %>
+          <button class='btn-ours mb-5'><%= link_to text, change_heat_pet_path(@pet), method: :patch %></button>
         <% end %>
 
         <%# button favorite %>
         <% if @pet.user != current_user %>
-          <%= button_tag(type: 'button', class: 'btn-ours mb-5') do %>
-            <% link_to "Favorite", make_favorite_pet_path(@pet), method: :patch %>
-          <% end %>
+        <% @pet.favorite ? text = "Remove from Favorites" : text = "Add to Favorites"  %>
+          <button class='btn-ours mb-5'><%= link_to text, make_favorite_pet_path(@pet), method: :patch %></button>
         <% end %>
 
       </div>
