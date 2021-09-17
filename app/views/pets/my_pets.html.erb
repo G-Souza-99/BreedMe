@@ -16,7 +16,7 @@
         <%= image_tag "avatar.jpg" %>
           <div class="my-pet-info">
             <div class="pet-text">
-              <h2>Add a new pet!</h2>
+              <h2>Add a pet!</h2>
               <% if policy(Pet).create? %>
                 <%= link_to '+ Add', new_pet_path, id:"add-pet-button" %>
               <% end %>
