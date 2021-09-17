@@ -9,9 +9,12 @@
   <div class="width-class"></div>
   </div>
   </div>
-    <div class=""> <%# dont remove this, it will break app %>
+  <div class="row">
+    <div class="col-8 offset-2">
+
+    <div class="style"> <%# dont remove this, it will break app %>
       <div class="row"></div>
-      <div class="text-center">
+      <div class="text-center mt-4">
         <% if @chatroom.owner != current_user %>
           <p>Talking with <%= "#{@chatroom.owner.first_name} #{@chatroom.owner.last_name}" %></p>
           <%= cl_image_tag @chatroom.owner.photo.key, class: "avatar-bigger mb-5"%>
@@ -21,19 +24,22 @@
         <% end %>
 
       </div>
-  <div class="chatroom-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <div class="message-container <%= current_user == message.user ? "own" : "" %>" id="message-<%= message.id %>">
-        <p class="message-container-content"><%= message.content %></p>
-        <i class="author">
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
+      <div class="chatroom-container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <div class="message-container <%= current_user == message.user ? "own" : "" %>" id="message-<%= message.id %>">
+            <p class="message-container-content"><%= message.content %></p>
+            <i class="author">
+              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <div class="message-box our-forms mt-5">
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, input_html: {autocomplete: "off" }, placeholder: "Type message" %>
+        <% end %>
+    </div>
+    </div>
   </div>
-  <div class="message-box our-forms mt-5">
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, input_html: {autocomplete: "off" }, placeholder: "Type message" %>
-    <% end %>
-  </div>
+
 </div>
