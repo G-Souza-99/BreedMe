@@ -69,16 +69,17 @@
   .space-class{
     margin-top:30px;
   }
-  #drag-field{
-    border:1px solid rgba(var(--rgb-black),0.3);
-    cursor: pointer;
-    background-color: white;
-    border-radius: 16px;
-    display: flex;
-    box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
-    justify-content: left;
-    align-items: center;
-    height: 50px;
-    width: 324px;
-  }
+}
+
+#drag-field{
+  border:1px solid rgba(var(--rgb-black),0.3);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  box-shadow: 0px 4px 4px rgba(var(--rgb-black),0.25);
+  justify-content: left;
+  align-items: center;
+  height: 50px;
+  max-width: 340px;
 }

@@ -3,6 +3,7 @@ const initDragAndDrop = () => {
   const dragField = document.getElementById("drag-field");
   if (imgUploadDefault) {
     dragField.onclick = () => {
+      console.log("click")
       imgUploadDefault.click();
     };
   }
