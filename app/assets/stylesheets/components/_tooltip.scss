@@ -19,6 +19,10 @@
 
 [data-tooltip]:hover:before {
     opacity : 1;
+    background-color: var(--white);
+    padding: 3px 6px 0 6px;
+    border-radius: 6px;
+    margin: 0 0 0 20px;
 }
 
 [data-tooltip]:not([data-tooltip-persistent]):before {
@@ -26,6 +30,6 @@
 }
 
 .super_tooltip {
-  color: #FEAE13;
+  color: var(--yellow);
   text-decoration: none;
 }
