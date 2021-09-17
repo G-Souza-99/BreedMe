@@ -150,7 +150,7 @@ pet5.photo.attach(
 pet5.save
 
 pet6 = Pet.create(
-  user_id: User.all.sample.id,
+  user_id: gabriel.id,
   pet_type: "cat",
   name: "Celine",
   sex: "female",
