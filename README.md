@@ -14,11 +14,11 @@ The Team
 ------------------------
 All three of us had a major impact in developing but these were the roles we often filled:
 
-Project Manager: [Gabriel Souza](https://github.com/G-Souza-99)
+Lead Frontend: [Gabriel Souza](https://github.com/G-Souza-99)
 
-Lead Developer: [Ines Louro](https://github.com/louro-ines) 
+Lead Backend: [Ines Louro](https://github.com/louro-ines) 
 
-Creative Head: [Catia Falagueira](https://github.com/catiafalagueira)
+Lead UI, UX, Designer: [Catia Falagueira](https://github.com/catiafalagueira)
 
 ---------------------------
 
